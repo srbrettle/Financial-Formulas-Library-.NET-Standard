@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace FinancialFormulas
+namespace srbrettle.FinancialFormulas
 {
     /// <summary>
     /// A collection of methods for solving Banking-focused Finance/Accounting equations.

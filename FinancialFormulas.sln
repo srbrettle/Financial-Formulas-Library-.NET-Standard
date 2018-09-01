@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialFormulas", "FinancialFormulas\FinancialFormulas.csproj", "{4E60A49A-834F-4972-A66C-4399E527FD57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.FinancialFormulas", "XUnitTestProject1\UnitTest.FinancialFormulas.csproj", "{F91F4C70-5638-425D-8F7E-930703301F51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.FinancialFormulas", "Test\UnitTest.FinancialFormulas.csproj", "{F91F4C70-5638-425D-8F7E-930703301F51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
