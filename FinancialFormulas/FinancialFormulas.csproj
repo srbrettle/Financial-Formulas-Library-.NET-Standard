@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright></Copyright>
+    <PackageLicenseUrl>https://github.com/srbrettle/Financial-Formulas/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/srbrettle/Financial-Formulas</PackageProjectUrl>
+    <Authors>Scott Brettle</Authors>
+    <Company />
+    <Product />
+    <Description>A collection of methods for solving Finance/Accounting equations.</Description>
+    <PackageTags>financial, formulas, equations, calculations, finance, accounting, economics, invest, math, mathematics, business, entrepreneur, banking</PackageTags>
+    <RepositoryUrl>https://github.com/srbrettle/Financial-Formulas</RepositoryUrl>
+    <Version>1.1.0</Version>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <PackageIconUrl>https://raw.githubusercontent.com/srbrettle/Financial-Formulas/master/FinancialFormulas.png</PackageIconUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget></PlatformTarget>
+  </PropertyGroup>
+
+</Project>
