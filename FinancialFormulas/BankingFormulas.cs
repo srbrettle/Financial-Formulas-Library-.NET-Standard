@@ -60,10 +60,10 @@ namespace FinancialFormulas
         }
 
         /// <summary>
-        /// Calculates 
+        /// Calculates Debt to Income Ratio from Monthly Debt Payments and Gross Monthly Income
         /// </summary>
-        /// <param name="monthlyDebtPayments"></param>
-        /// <param name="grossMonthlyIncome"></param>
+        /// <param name="monthlyDebtPayments">Monthly Debt Payments</param>
+        /// <param name="grossMonthlyIncome">Gross Monthly Income</param>
         /// <returns></returns>
         public static double CalcDebtToIncomeRatio(double monthlyDebtPayments, double grossMonthlyIncome)
         {
@@ -71,12 +71,12 @@ namespace FinancialFormulas
         }
 
         /// <summary>
-        /// Calculates 
+        /// Calculates Balloon Balance of Loan from Present Value, Payment, Rate Per Payment and Number Of Payments
         /// </summary>
-        /// <param name="presentValue"></param>
-        /// <param name="payment"></param>
-        /// <param name="ratePerPayment"></param>
-        /// <param name="numberOfPayments"></param>
+        /// <param name="presentValue">Present Value</param>
+        /// <param name="payment">Payment</param>
+        /// <param name="ratePerPayment">Rate Per Payment</param>
+        /// <param name="numberOfPayments">Number Of Payments</param>
         /// <returns></returns>
         public static double CalcBalloonBalanceOfLoan(double presentValue, double payment, double ratePerPayment, double numberOfPayments)
         {
@@ -84,11 +84,11 @@ namespace FinancialFormulas
         }
 
         /// <summary>
-        /// Calculates 
+        /// Calculates Loan Payment from Present Value, Rate per Period and Number of Periods
         /// </summary>
-        /// <param name="presentValue"></param>
-        /// <param name="ratePerPeriod"></param>
-        /// <param name="numberOfPeriods"></param>
+        /// <param name="presentValue">Present Value</param>
+        /// <param name="ratePerPeriod">Rate per Period</param>
+        /// <param name="numberOfPeriods">Number of Periods</param>
         /// <returns></returns>
         public static double CalcLoanPayment(double presentValue, double ratePerPeriod, double numberOfPeriods)
         {
@@ -96,12 +96,12 @@ namespace FinancialFormulas
         }
 
         /// <summary>
-        /// Calculates 
+        /// Calculates Remain Balance on Loan from Present Value, Payment, Rate per Payment and Number of Payments
         /// </summary>
-        /// <param name="presentValue"></param>
-        /// <param name="payment"></param>
-        /// <param name="ratePerPayment"></param>
-        /// <param name="numberOfPayments"></param>
+        /// <param name="presentValue">Present Value</param>
+        /// <param name="payment">Payment</param>
+        /// <param name="ratePerPayment">Rate Per Payment</param>
+        /// <param name="numberOfPayments">Number Of Payments</param>
         /// <returns></returns>
         public static double CalcRemainingBalanceOnLoan(double presentValue, double payment, double ratePerPayment, double numberOfPayments)
         {
@@ -109,10 +109,10 @@ namespace FinancialFormulas
         }
 
         /// <summary>
-        /// Calculates 
+        /// Calculates Loan to Deposit Ratio from Loans and Deposits
         /// </summary>
-        /// <param name="loans"></param>
-        /// <param name="deposits"></param>
+        /// <param name="loans">Loans</param>
+        /// <param name="deposits">Deposits</param>
         /// <returns></returns>
         public static double CalcLoanToDepositRatio(double loans, double deposits)
         {
@@ -120,10 +120,10 @@ namespace FinancialFormulas
         }
 
         /// <summary>
-        /// Calculates 
+        /// Calculates Loan to Value Ratio from Loan Amount and Value of Collateral
         /// </summary>
-        /// <param name="loanAmount"></param>
-        /// <param name="ValueOfCollateral"></param>
+        /// <param name="loanAmount">Loan Amount</param>
+        /// <param name="ValueOfCollateral">Value of Collateral</param>
         /// <returns></returns>
         public static double CalcLoanToValueRatio(double loanAmount, double ValueOfCollateral)
         {
@@ -131,11 +131,11 @@ namespace FinancialFormulas
         }
 
         /// <summary>
-        /// Calculates 
+        /// Calculates Simple Interest from Principal, Rate and Time
         /// </summary>
-        /// <param name="principal"></param>
-        /// <param name="rate"></param>
-        /// <param name="time"></param>
+        /// <param name="principal">Principal</param>
+        /// <param name="rate">Rate</param>
+        /// <param name="time">Time</param>
         /// <returns></returns>
         public static double CalcSimpleInterest(double principal, double rate, double time)
         {
