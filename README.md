@@ -1,0 +1,1 @@
+# Financial-Formulas-API-.NET-Core [![Build Status](https://travis-ci.org/srbrettle/Financial-Formulas-API-.NET-Core.svg?branch=master)](https://travis-ci.org/srbrettle/Financial-Formulas-API-.NET-Core) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/srbrettle/Financial-Formulas-API-.NET-Core/issues)
