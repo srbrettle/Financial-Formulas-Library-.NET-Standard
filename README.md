@@ -41,7 +41,7 @@ double result = FinancialFormulas.CalcPriceSalesRatio(500,200);
 This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details.
 
 ## Formulas / Equations included
-
+### FinancialFormulas.cs
 * Asset Turnover
 * Assets
 * Average Collection Period
@@ -89,3 +89,18 @@ This project is licensed under the MIT License - see the [LICENSE](/LICENSE) fil
 * Sales Revenue
 * Straight Line Method
 * Units Of Production
+### BankingFormulas.cs
+* Annual Percentage Yield
+* Balloon Loan Payment
+* Compound Interest
+* Continuous Compounding
+* Debt To Income Ratio
+* Balloon Balance Of Loan
+* Loan Payment
+* Remaining Balance On Loan
+* Loan To Deposit Ratio
+* Loan To Value Ratio
+* Simple Interest
+### FinancialMarketsFormulas.cs
+* Rate Of Inflation
+* Real Rate Of Return
