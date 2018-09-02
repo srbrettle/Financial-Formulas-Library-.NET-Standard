@@ -1,6 +1,6 @@
 language: csharp
 solution: FinancialFormulas.sln
-dotnet: 2.0
+dotnet: 2.1
 install:
   - nuget restore FinancialFormulas.sln
   - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
