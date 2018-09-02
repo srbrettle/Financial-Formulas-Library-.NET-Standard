@@ -7,4 +7,4 @@ install:
 script:
   - dotnet restore
   - dotnet build
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./Test/bin/Release/netcoreapp2.1/UnitTest.FinancialFormulas.dll
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./Test/bin/Debug/netcoreapp2.1/UnitTest.FinancialFormulas.dll
