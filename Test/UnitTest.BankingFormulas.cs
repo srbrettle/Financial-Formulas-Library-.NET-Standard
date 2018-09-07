@@ -9,8 +9,8 @@ namespace UnitTest_FinancialFormulas
 		[Fact]	
 		public void UnitTest_CalcAnnualPercentageYield()
         {
-            var result = BankingFormulas.CalcAnnualPercentageYield(0.04 , 12);
-            Assert.Equal(0.0407415, Math.Round(result, 7, MidpointRounding.AwayFromZero));
+            var result = BankingFormulas.CalcAnnualPercentageYield(0.04m , 12);
+            Assert.Equal(0.0407415m, Math.Round(result, 7, MidpointRounding.AwayFromZero));
             //TODO: Test how much impact approximations are having on results (double -> decimal?)
 		}
 
