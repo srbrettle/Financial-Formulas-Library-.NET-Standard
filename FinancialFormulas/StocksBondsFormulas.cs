@@ -175,5 +175,47 @@ namespace srbrettle.FinancialFormulas
         {
             return dividendYield + growthRate;
         }
+
+        public static double CalcStockPresentValueWithZeroGrowth(double dividendsPerPeriod, double requiredRateOfReturn)
+        {
+            return dividendsPerPeriod / requiredRateOfReturn;
+        }
+
+        public static double CalcTaxEquivanlentYield(double taxFreeYield, double taxRate)
+        {
+            return taxFreeYield / (1 - taxRate);
+        }
+
+        public static double CalcTotalStockReturnPercentage(double initialStockPrice, double endingStockPrice, double dividends)
+        {
+            return ((endingStockPrice - initialStockPrice) + dividends) / initialStockPrice;
+        }
+
+        public static double CalcTotalStockReturnCash(double initialStockPrice, double endingStockPrice, double dividends)
+        {
+            return (endingStockPrice - initialStockPrice) + dividends;
+        }
+
+        public static double CalcTotalStockReturnFromYields(double dividendYield, double capitalGainsYield)
+        {
+            return dividendYield + capitalGainsYield;
+        }
+
+        public static double CalcApproxYieldToMaturity(double couponOrInterestPayment, double faceValue, double price, double yearsToMaturity)
+        {
+            double numerator = couponOrInterestPayment + ((faceValue - price) / yearsToMaturity);
+            double denominator = (faceValue + price) / 2;
+            return (numerator/denominator);
+        }
+
+        public static double CalcZeroCouponBondValue(double faceValue, double rateOrYield, double timeToMaturity)
+        {
+            return faceValue / Math.Pow(1 + rateOrYield, timeToMaturity);
+        }
+
+        public static double CalcZeroCouponBondYield(double faceValue, double presentValue, double timeToMaturity)
+        {
+            return Math.Pow(faceValue / presentValue, 1 / timeToMaturity) - 1;
+        }
     }
 }
