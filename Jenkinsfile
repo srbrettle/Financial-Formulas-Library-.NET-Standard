@@ -11,7 +11,7 @@ node {
 	stage 'Build Debug NetCore'
 		bat "dotnet build FinancialFormulas/FinancialFormulas.csproj --configuration Debug"
 	
-	stage "Unit Tests'
+	stage 'Unit Tests'
 		bat "dotnet test Test/UnitTest_FinancialFormulas.csproj --logger:xunit"
 
 	stage 'Archive'
