@@ -155,5 +155,25 @@ namespace srbrettle.FinancialFormulas
         {
             return pricePerShare / salesPerShare;
         }
+
+        public static double CalcRiskPremium(double assetOrInvestmentReturn, double riskFreeReturn)
+        {
+            return assetOrInvestmentReturn - riskFreeReturn;
+        }        
+
+        public static double CalcStockPresentValueWithConstantGrowth(double estimatedDividendsForNextPeriod, double requiredRateOfReturn, double growthRate)
+        {
+            return estimatedDividendsForNextPeriod / (requiredRateOfReturn - growthRate);
+        }
+
+        public static double CalcGrowthRate(double retentionRate, double returnOnEquity)
+        {
+            return retentionRate * returnOnEquity;
+        }
+
+        public static double CalcRequiredRateOfReturn(double dividendYield, double growthRate)
+        {
+            return dividendYield + growthRate;
+        }
     }
 }
