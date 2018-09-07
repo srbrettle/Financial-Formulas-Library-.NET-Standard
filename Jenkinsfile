@@ -1,4 +1,5 @@
-node {
+node ( 'vs2017' )
+{
 	stage 'Checkout'
 		checkout scm
 
@@ -12,6 +13,5 @@ node {
 		bat "dotnet build FinancialFormulas/FinancialFormulas.csproj --configuration Debug"
 
 	stage 'Archive'
-		archive 'FinancialFormulas/bin/Release/**'
-
+		archive 'FinancialFormulas/bin/**/*'
 }
