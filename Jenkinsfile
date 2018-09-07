@@ -12,7 +12,7 @@ node {
 		bat "dotnet build FinancialFormulas/FinancialFormulas.csproj --configuration Debug"
 	
 	stage 'Unit Tests'
-		bat "dotnet test Test/UnitTest.FinancialFormulas.csproj --logger:xunit"
+		bat "dotnet test Test/UnitTest.FinancialFormulas.csproj --logger:trx"
 
 	stage 'Archive'
 		archive 'FinancialFormulas/bin/**/*'
