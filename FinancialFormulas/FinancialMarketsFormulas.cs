@@ -13,7 +13,7 @@ namespace srbrettle.FinancialFormulas
         /// <param name="initialConsumerPriceIndex">Initial Consumer Price Index</param>
         /// <param name="endingConsumerPriceIndex">Ending Consumer Price Index</param>
         /// <returns></returns>
-        public static double CalcRateOfInflation(double initialConsumerPriceIndex, double endingConsumerPriceIndex)
+        public static decimal CalcRateOfInflation(decimal initialConsumerPriceIndex, decimal endingConsumerPriceIndex)
         {
             return (endingConsumerPriceIndex-initialConsumerPriceIndex)/initialConsumerPriceIndex;
         }
@@ -24,7 +24,7 @@ namespace srbrettle.FinancialFormulas
         /// <param name="nominalRate">Nominal Rate</param>
         /// <param name="inflationRate">Inflation Rate</param>
         /// <returns></returns>
-        public static double CalcRealRateOfReturn(double nominalRate, double inflationRate)
+        public static decimal CalcRealRateOfReturn(decimal nominalRate, decimal inflationRate)
         {
             return ((1 + nominalRate) / (1 + inflationRate)) - 1;
         }

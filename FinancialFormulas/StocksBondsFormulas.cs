@@ -8,103 +8,103 @@ namespace srbrettle.FinancialFormulas
     /// </summary>
     public static class StocksBondsFormulas
     {
-        public static double CalcBidAskSpread(double bid, double ask)
+        public static decimal CalcBidAskSpread(decimal bid, decimal ask)
         {
             return ask - bid;
         }
 
-        public static double CalcBondEquivalentYield(double faceValue, double bondPice, double daysToMaturity)
+        public static decimal CalcBondEquivalentYield(decimal faceValue, decimal bondPice, decimal daysToMaturity)
         {
             return ((faceValue - bondPice) / bondPice) * (365 / daysToMaturity);
         }
 
-        public static double CalcBookValuePerShare(double totalCommonStockholdersEquity, double numberOfCommonShares)
+        public static decimal CalcBookValuePerShare(decimal totalCommonStockholdersEquity, decimal numberOfCommonShares)
         {
             return totalCommonStockholdersEquity / numberOfCommonShares;
         }
 
-        public static double CalcCapitalAssetPricingModel(double riskFreeRate, double beta, double returnOnTheMarket)
+        public static decimal CalcCapitalAssetPricingModel(decimal riskFreeRate, decimal beta, decimal returnOnTheMarket)
         {
             return riskFreeRate + beta * (returnOnTheMarket - riskFreeRate);
         }
 
-        public static double CalcCapitalGainsYield(double initialStockPrice, double endingStockPrice)
+        public static decimal CalcCapitalGainsYield(decimal initialStockPrice, decimal endingStockPrice)
         {
             return (endingStockPrice - initialStockPrice) / initialStockPrice;
         }
 
-        public static double CalcCurrentYield(double annualCoupons, double currentBondPrice)
+        public static decimal CalcCurrentYield(decimal annualCoupons, decimal currentBondPrice)
         {
             return annualCoupons / currentBondPrice;
         }
 
-        public static double CalcDilutedEarningsPerShare(double netIncome, double averageShares, double otherConvertibleInstruments)
+        public static decimal CalcDilutedEarningsPerShare(decimal netIncome, decimal averageShares, decimal otherConvertibleInstruments)
         {
             return netIncome / (averageShares + otherConvertibleInstruments);
         }
 
-        public static double CalcDividendPayoutRatio(double dividends, double netIncome)
+        public static decimal CalcDividendPayoutRatio(decimal dividends, decimal netIncome)
         {
             return dividends / netIncome;
         }
 
-        public static double CalcDividendYield(double dividendsForThePeriod, double initialPriceForThePeriod)
+        public static decimal CalcDividendYield(decimal dividendsForThePeriod, decimal initialPriceForThePeriod)
         {
             return dividendsForThePeriod / initialPriceForThePeriod;
         }
 
-        public static double CalcDividendsPerShare(double dividends, double numberOfShares)
+        public static decimal CalcDividendsPerShare(decimal dividends, decimal numberOfShares)
         {
             return dividends / numberOfShares;
         }
 
-        public static double CalcEarningsPerShare(double netIncome, double weightedAverageOutstandingShares)
+        public static decimal CalcEarningsPerShare(decimal netIncome, decimal weightedAverageOutstandingShares)
         {
             return netIncome / weightedAverageOutstandingShares;
         }
 
-        public static double CalcEquityMultiplier(double totalAssets, double stockholdersEquity)
+        public static decimal CalcEquityMultiplier(decimal totalAssets, decimal stockholdersEquity)
         {
             return totalAssets / stockholdersEquity;
         }
 
-        public static double CalcEquityMultiplier(double equityRatio)
+        public static decimal CalcEquityMultiplier(decimal equityRatio)
         {
             return 1 / equityRatio;
         }
 
-        public static double CalcEstimatedEarnings(double forecastedSales, double forecastedExpenses)
+        public static decimal CalcEstimatedEarnings(decimal forecastedSales, decimal forecastedExpenses)
         {
             return forecastedSales - forecastedExpenses;
         }
 
-        public static double CalcEstimatedEarningsWithProfitMargin(double projectedSales, double projectedNetProfitMargin)
+        public static decimal CalcEstimatedEarningsWithProfitMargin(decimal projectedSales, decimal projectedNetProfitMargin)
         {
             return projectedSales * projectedNetProfitMargin;
 
         }
 
-        public static double CalcGeometricMeanReturn(ICollection ratesOfReturn)
+        public static decimal CalcGeometricMeanReturn(ICollection ratesOfReturn)
         {
             int numberOfPeriods = ratesOfReturn.Count;
-            double denominator = 0;
-            foreach (double rateOfReturn in ratesOfReturn)
+            decimal denominator = 0;
+            foreach (decimal rateOfReturn in ratesOfReturn)
             {
                 denominator *= (1 + rateOfReturn);
             }
 
             if (numberOfPeriods != 0 || denominator != 0)
             {
-                return (Math.Pow(denominator, 1 / numberOfPeriods) - 1);
+                return (decimal)Math.Pow((double)denominator, 1 / numberOfPeriods) - 1;
             }
             return 0;
         }
 
-        public static double CalcHoldingPeriodReturn(ICollection percentagePeriodReturns)
+        public static decimal CalcHoldingPeriodReturn(ICollection percentagePeriodReturns)
         {
             int numberOfPeriods = percentagePeriodReturns.Count;
-            double a = 0;
-            foreach (double periodReturn in percentagePeriodReturns)
+            decimal a = 0;
+            foreach (decimal periodReturn in percentagePeriodReturns)
             {
                 a *= (1 + periodReturn);
             }
@@ -116,106 +116,106 @@ namespace srbrettle.FinancialFormulas
             return 0;
         }
 
-        public static double CalcHoldingPeriodReturn(double periodicRate, double numberOfPeriods)
+        public static decimal CalcHoldingPeriodReturn(decimal periodicRate, decimal numberOfPeriods)
         {
-            return Math.Pow(1 + periodicRate, numberOfPeriods) - 1;
+            return (decimal)Math.Pow((double)(1 + periodicRate), (double)numberOfPeriods) - 1;
         }
 
-        public static double CalcHoldingPeriodReturn(double earnings, double assetAppreciation, double initialInvestment)
+        public static decimal CalcHoldingPeriodReturn(decimal earnings, decimal assetAppreciation, decimal initialInvestment)
         {
             return (earnings + assetAppreciation) / initialInvestment;   
         }
 
-        public static double CalcNetAssetValue(double fundAssets, double fundLiabilities, double outstandingShares)
+        public static decimal CalcNetAssetValue(decimal fundAssets, decimal fundLiabilities, decimal outstandingShares)
         {
             return (fundAssets - fundLiabilities) / outstandingShares;
         }
 
-        public static double CalcPreferredStockValue(double dividend, double discountRate)
+        public static decimal CalcPreferredStockValue(decimal dividend, decimal discountRate)
         {
             return dividend / discountRate;
         }
 
-        public static double CalcRateOfReturn(double dividend, double price)
+        public static decimal CalcRateOfReturn(decimal dividend, decimal price)
         {
             return dividend / price;
         }
 
-        public static double CalcPriceToBookValueRatio(double marketPricePerShare, double bookValuePerShare)
+        public static decimal CalcPriceToBookValueRatio(decimal marketPricePerShare, decimal bookValuePerShare)
         {
             return marketPricePerShare / bookValuePerShare;
         }
 
-        public static double CalcPriceToEarningsRatio(double pricePerShare, double earningsPerShare)
+        public static decimal CalcPriceToEarningsRatio(decimal pricePerShare, decimal earningsPerShare)
         {
             return pricePerShare / earningsPerShare;
         }
 
-        public static double CalcPriceToSalesRatio(double pricePerShare, double salesPerShare)
+        public static decimal CalcPriceToSalesRatio(decimal pricePerShare, decimal salesPerShare)
         {
             return pricePerShare / salesPerShare;
         }
 
-        public static double CalcRiskPremium(double assetOrInvestmentReturn, double riskFreeReturn)
+        public static decimal CalcRiskPremium(decimal assetOrInvestmentReturn, decimal riskFreeReturn)
         {
             return assetOrInvestmentReturn - riskFreeReturn;
         }        
 
-        public static double CalcStockPresentValueWithConstantGrowth(double estimatedDividendsForNextPeriod, double requiredRateOfReturn, double growthRate)
+        public static decimal CalcStockPresentValueWithConstantGrowth(decimal estimatedDividendsForNextPeriod, decimal requiredRateOfReturn, decimal growthRate)
         {
             return estimatedDividendsForNextPeriod / (requiredRateOfReturn - growthRate);
         }
 
-        public static double CalcGrowthRate(double retentionRate, double returnOnEquity)
+        public static decimal CalcGrowthRate(decimal retentionRate, decimal returnOnEquity)
         {
             return retentionRate * returnOnEquity;
         }
 
-        public static double CalcRequiredRateOfReturn(double dividendYield, double growthRate)
+        public static decimal CalcRequiredRateOfReturn(decimal dividendYield, decimal growthRate)
         {
             return dividendYield + growthRate;
         }
 
-        public static double CalcStockPresentValueWithZeroGrowth(double dividendsPerPeriod, double requiredRateOfReturn)
+        public static decimal CalcStockPresentValueWithZeroGrowth(decimal dividendsPerPeriod, decimal requiredRateOfReturn)
         {
             return dividendsPerPeriod / requiredRateOfReturn;
         }
 
-        public static double CalcTaxEquivanlentYield(double taxFreeYield, double taxRate)
+        public static decimal CalcTaxEquivanlentYield(decimal taxFreeYield, decimal taxRate)
         {
             return taxFreeYield / (1 - taxRate);
         }
 
-        public static double CalcTotalStockReturnPercentage(double initialStockPrice, double endingStockPrice, double dividends)
+        public static decimal CalcTotalStockReturnPercentage(decimal initialStockPrice, decimal endingStockPrice, decimal dividends)
         {
             return ((endingStockPrice - initialStockPrice) + dividends) / initialStockPrice;
         }
 
-        public static double CalcTotalStockReturnCash(double initialStockPrice, double endingStockPrice, double dividends)
+        public static decimal CalcTotalStockReturnCash(decimal initialStockPrice, decimal endingStockPrice, decimal dividends)
         {
             return (endingStockPrice - initialStockPrice) + dividends;
         }
 
-        public static double CalcTotalStockReturnFromYields(double dividendYield, double capitalGainsYield)
+        public static decimal CalcTotalStockReturnFromYields(decimal dividendYield, decimal capitalGainsYield)
         {
             return dividendYield + capitalGainsYield;
         }
 
-        public static double CalcApproxYieldToMaturity(double couponOrInterestPayment, double faceValue, double price, double yearsToMaturity)
+        public static decimal CalcApproxYieldToMaturity(decimal couponOrInterestPayment, decimal faceValue, decimal price, decimal yearsToMaturity)
         {
-            double numerator = couponOrInterestPayment + ((faceValue - price) / yearsToMaturity);
-            double denominator = (faceValue + price) / 2;
+            decimal numerator = couponOrInterestPayment + ((faceValue - price) / yearsToMaturity);
+            decimal denominator = (faceValue + price) / 2;
             return (numerator/denominator);
         }
 
-        public static double CalcZeroCouponBondValue(double faceValue, double rateOrYield, double timeToMaturity)
+        public static decimal CalcZeroCouponBondValue(decimal faceValue, decimal rateOrYield, decimal timeToMaturity)
         {
-            return faceValue / Math.Pow(1 + rateOrYield, timeToMaturity);
+            return faceValue / (decimal)Math.Pow((double)(1 + rateOrYield), (double)timeToMaturity);
         }
 
-        public static double CalcZeroCouponBondYield(double faceValue, double presentValue, double timeToMaturity)
+        public static decimal CalcZeroCouponBondYield(decimal faceValue, decimal presentValue, decimal timeToMaturity)
         {
-            return Math.Pow(faceValue / presentValue, 1 / timeToMaturity) - 1;
+            return (decimal)Math.Pow((double)(faceValue / presentValue), (double)(1 / timeToMaturity)) - 1;
         }
     }
 }

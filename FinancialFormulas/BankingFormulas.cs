@@ -13,9 +13,9 @@ namespace srbrettle.FinancialFormulas
         /// <param name="statedAnnualInterestRate">Stated Annual Interest Rate</param>
         /// <param name="numberOfTimesCompounded">Number of Times Compounded</param>
         /// <returns></returns>
-        public static double CalcAnnualPercentageYield(double statedAnnualInterestRate, double numberOfTimesCompounded)
+        public static decimal CalcAnnualPercentageYield(decimal statedAnnualInterestRate, decimal numberOfTimesCompounded)
         {
-            return Math.Pow(1 + (statedAnnualInterestRate/numberOfTimesCompounded), numberOfTimesCompounded) - 1;
+            return (decimal)Math.Pow((double)(1 + (statedAnnualInterestRate/numberOfTimesCompounded)), (double)numberOfTimesCompounded) - 1;
         }
 
         /// <summary>
@@ -26,10 +26,10 @@ namespace srbrettle.FinancialFormulas
         /// <param name="ratePerPeriod">Rate Per Period</param>
         /// <param name="numberOfPeriods">Number of Periods</param>
         /// <returns></returns>
-        public static double CalcBalloonLoanPayment(double presentValue, double balloonAmount, double ratePerPeriod, double numberOfPeriods)
+        public static decimal CalcBalloonLoanPayment(decimal presentValue, decimal balloonAmount, decimal ratePerPeriod, decimal numberOfPeriods)
         {
-            double pvOfPeriodicPayments = (presentValue - (balloonAmount / Math.Pow(1 + ratePerPeriod, numberOfPeriods)));
-            double annuityPaymentFactor = (ratePerPeriod / (1 - Math.Pow(1 + ratePerPeriod, -numberOfPeriods)));
+            decimal pvOfPeriodicPayments = (presentValue - (balloonAmount / (decimal)Math.Pow((double)(1 + ratePerPeriod), (double)numberOfPeriods)));
+            decimal annuityPaymentFactor = (ratePerPeriod / (1 - (decimal)Math.Pow((double)(1 + ratePerPeriod), (double)-numberOfPeriods)));
             return (pvOfPeriodicPayments * annuityPaymentFactor);
         }
 
@@ -40,9 +40,9 @@ namespace srbrettle.FinancialFormulas
         /// <param name="ratePerPeriod">Rate per Period</param>
         /// <param name="numberOfPeriods">Number of Periods</param>
         /// <returns></returns>
-        public static double CalcCompoundInterest(double principal, double ratePerPeriod, double numberOfPeriods)
+        public static decimal CalcCompoundInterest(decimal principal, decimal ratePerPeriod, decimal numberOfPeriods)
         {
-            return principal * (Math.Pow(1 + ratePerPeriod, numberOfPeriods) - 1);
+            return principal * ((decimal)Math.Pow((double)(1 + ratePerPeriod), (double)numberOfPeriods) - 1);
         }
 
         /// <summary>
@@ -52,9 +52,9 @@ namespace srbrettle.FinancialFormulas
         /// <param name="rate">Rate</param>
         /// <param name="time">Time</param>
         /// <returns></returns>
-        public static double CalcContinuousCompounding(double principal, double rate, double time)
+        public static decimal CalcContinuousCompounding(decimal principal, decimal rate, decimal time)
         {
-            return principal * Math.Exp(rate * time);
+            return principal * (decimal)Math.Exp((double)(rate * time));
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace srbrettle.FinancialFormulas
         /// <param name="monthlyDebtPayments">Monthly Debt Payments</param>
         /// <param name="grossMonthlyIncome">Gross Monthly Income</param>
         /// <returns></returns>
-        public static double CalcDebtToIncomeRatio(double monthlyDebtPayments, double grossMonthlyIncome)
+        public static decimal CalcDebtToIncomeRatio(decimal monthlyDebtPayments, decimal grossMonthlyIncome)
         {
             return monthlyDebtPayments / grossMonthlyIncome;
         }
@@ -76,9 +76,10 @@ namespace srbrettle.FinancialFormulas
         /// <param name="ratePerPayment">Rate Per Payment</param>
         /// <param name="numberOfPayments">Number Of Payments</param>
         /// <returns></returns>
-        public static double CalcBalloonBalanceOfLoan(double presentValue, double payment, double ratePerPayment, double numberOfPayments)
+        public static decimal CalcBalloonBalanceOfLoan(decimal presentValue, decimal payment, decimal ratePerPayment, decimal numberOfPayments)
         {
-            return presentValue*Math.Pow(1+ratePerPayment, numberOfPayments) - payment*((Math.Pow(1+ratePerPayment, numberOfPayments)-1)/ratePerPayment);
+            return presentValue * (decimal)Math.Pow((double)(1+ratePerPayment), (double)numberOfPayments)
+                - payment * (((decimal)Math.Pow((double)(1+ratePerPayment), (double)numberOfPayments)-1)/ratePerPayment);
         }
 
         /// <summary>
@@ -88,9 +89,9 @@ namespace srbrettle.FinancialFormulas
         /// <param name="ratePerPeriod">Rate per Period</param>
         /// <param name="numberOfPeriods">Number of Periods</param>
         /// <returns></returns>
-        public static double CalcLoanPayment(double presentValue, double ratePerPeriod, double numberOfPeriods)
+        public static decimal CalcLoanPayment(decimal presentValue, decimal ratePerPeriod, decimal numberOfPeriods)
         {
-            return (ratePerPeriod * presentValue)/(1-Math.Pow(1+ratePerPeriod, -numberOfPeriods));
+            return (ratePerPeriod * presentValue)/(1-(decimal)Math.Pow((double)(1+ratePerPeriod), (double)-numberOfPeriods));
         }
 
         /// <summary>
@@ -101,9 +102,10 @@ namespace srbrettle.FinancialFormulas
         /// <param name="ratePerPayment">Rate Per Payment</param>
         /// <param name="numberOfPayments">Number Of Payments</param>
         /// <returns></returns>
-        public static double CalcRemainingBalanceOnLoan(double presentValue, double payment, double ratePerPayment, double numberOfPayments)
+        public static decimal CalcRemainingBalanceOnLoan(decimal presentValue, decimal payment, decimal ratePerPayment, decimal numberOfPayments)
         {
-            return presentValue * Math.Pow(1 + ratePerPayment, numberOfPayments) - ((Math.Pow(1 + ratePerPayment, numberOfPayments) - 1) / ratePerPayment);
+            return presentValue * (decimal)Math.Pow((double)(1 + ratePerPayment), (double)numberOfPayments)
+                - ((decimal)(Math.Pow((double)(1 + ratePerPayment), (double)numberOfPayments) - 1) / ratePerPayment);
         }
 
         /// <summary>
@@ -112,7 +114,7 @@ namespace srbrettle.FinancialFormulas
         /// <param name="loans">Loans</param>
         /// <param name="deposits">Deposits</param>
         /// <returns></returns>
-        public static double CalcLoanToDepositRatio(double loans, double deposits)
+        public static decimal CalcLoanToDepositRatio(decimal loans, decimal deposits)
         {
             return loans / deposits;
         }
@@ -123,7 +125,7 @@ namespace srbrettle.FinancialFormulas
         /// <param name="loanAmount">Loan Amount</param>
         /// <param name="ValueOfCollateral">Value of Collateral</param>
         /// <returns></returns>
-        public static double CalcLoanToValueRatio(double loanAmount, double ValueOfCollateral)
+        public static decimal CalcLoanToValueRatio(decimal loanAmount, decimal ValueOfCollateral)
         {
             return loanAmount / ValueOfCollateral;
         }
@@ -135,7 +137,7 @@ namespace srbrettle.FinancialFormulas
         /// <param name="rate">Rate</param>
         /// <param name="time">Time</param>
         /// <returns></returns>
-        public static double CalcSimpleInterest(double principal, double rate, double time)
+        public static decimal CalcSimpleInterest(decimal principal, decimal rate, decimal time)
         {
             return principal * rate * time;
         }
