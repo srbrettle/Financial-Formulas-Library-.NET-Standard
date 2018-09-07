@@ -11,8 +11,6 @@ node {
 	stage 'Build Debug NetCore'
 		bat "dotnet build FinancialFormulas/FinancialFormulas.csproj --configuration Debug"
 
-
-
 	stage 'Archive'
 		archive 'FinancialFormulas/bin/Release/**'
 
