@@ -104,3 +104,32 @@ This project is licensed under the MIT License - see the [LICENSE](/LICENSE) fil
 ### FinancialMarketsFormulas.cs
 * Rate Of Inflation
 * Real Rate Of Return
+### StocksBondsFormulas.cs
+* Bid Ask Spread
+* Bond Equivalent Yield
+* Book Value per Share
+* Capital Asset Pricing Model
+* Capital Gains Yield
+* Current Yield
+* Diluted Earnings Per Share
+* Dividend Payout Ratio
+* Dividend Yield - Stock
+* Dividends Per Share
+* Earnings Per Share
+* Equity Multiplier
+* Estimated Earnings
+* Geometric Mean Return
+* Holding Period Return
+* Net Asset Value
+* Preferred Stock
+* Price to Book Value
+* Price to Earnings (P/E Ratio)
+* Price to Sales (P/S Ratio)
+* Risk Premium
+* Stock - PV with Constant Growth
+* Stock - PV with Zero Growth
+* Tax Equivalent Yield
+* Total Stock Return
+* Yield to Maturity
+* Zero Coupon Bond Value
+* Zero Coupon Bond Yield
