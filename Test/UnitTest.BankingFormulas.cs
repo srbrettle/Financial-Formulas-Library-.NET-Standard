@@ -11,7 +11,6 @@ namespace UnitTest_FinancialFormulas
         {
             var result = BankingFormulas.CalcAnnualPercentageYield(0.04m , 12);
             Assert.Equal(0.0407415m, Math.Round(result, 7, MidpointRounding.AwayFromZero));
-            //TODO: Test how much impact approximations are having on results (double -> decimal?)
 		}
 
         [Fact(Skip = "Test under development")]

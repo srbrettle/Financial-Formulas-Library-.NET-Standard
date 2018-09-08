@@ -214,7 +214,7 @@ namespace UnitTest_FinancialFormulas
         }
 
         [Fact(Skip = "Test under development")]
-        public void UnitTest_CalcTaxEquivanlentYield()
+        public void UnitTest_CalcTaxEquivalentYield()
         {
             // return taxFreeYield / (1 - taxRate);
         }
