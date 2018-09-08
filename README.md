@@ -1,4 +1,4 @@
-# Financial-Formulas-API-.NET-Core [![Build Status](https://travis-ci.org/srbrettle/Financial-Formulas-API-.NET-Core.svg?branch=master)](https://travis-ci.org/srbrettle/Financial-Formulas-API-.NET-Core) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/srbrettle/Financial-Formulas-API-.NET-Core/issues)
+# Financial-Formulas-API-.NET-Core [![Build status](https://ci.appveyor.com/api/projects/status/iy080gvd0x4gmt3c?svg=true)](https://ci.appveyor.com/project/srbrettle/financial-formulas-api-net-core) [![Build Status](https://travis-ci.org/srbrettle/Financial-Formulas-API-.NET-Core.svg?branch=master)](https://travis-ci.org/srbrettle/Financial-Formulas-API-.NET-Core) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/srbrettle/Financial-Formulas-API-.NET-Core/issues)
 
 A collection of methods for solving Finance/Accounting equations, implemented in C#. 
 Java, Python and C++ implementations are available [here](https://github.com/srbrettle/Financial-Formulas).
@@ -9,11 +9,11 @@ Java, Python and C++ implementations are available [here](https://github.com/srb
 
 ## Getting Started - C#
 
-### Using NuGet [![NuGet](https://img.shields.io/badge/NuGet-1.1.0-blue.svg)](https://www.nuget.org/packages/FinancialFormulas/1.1.0)
+### Using NuGet [![NuGet](https://img.shields.io/badge/NuGet-1.2.0-blue.svg)](https://www.nuget.org/packages/FinancialFormulas/1.2.0)
 
 1. Within your project, install FinancialFormulas NuGet package (via "Manage Packages for Solution" or running the following in "Packet Manager Console".
 ```PowerShell
-Install-Package FinancialFormulas -Version 1.1.0
+Install-Package FinancialFormulas -Version 1.2.0
 ```
 2. Reference the Namespace:
 ```c#
@@ -104,3 +104,32 @@ This project is licensed under the MIT License - see the [LICENSE](/LICENSE) fil
 ### FinancialMarketsFormulas.cs
 * Rate Of Inflation
 * Real Rate Of Return
+### StocksBondsFormulas.cs
+* Bid Ask Spread
+* Bond Equivalent Yield
+* Book Value per Share
+* Capital Asset Pricing Model
+* Capital Gains Yield
+* Current Yield
+* Diluted Earnings Per Share
+* Dividend Payout Ratio
+* Dividend Yield - Stock
+* Dividends Per Share
+* Earnings Per Share
+* Equity Multiplier
+* Estimated Earnings
+* Geometric Mean Return
+* Holding Period Return
+* Net Asset Value
+* Preferred Stock
+* Price to Book Value
+* Price to Earnings (P/E Ratio)
+* Price to Sales (P/S Ratio)
+* Risk Premium
+* Stock - PV with Constant Growth
+* Stock - PV with Zero Growth
+* Tax Equivalent Yield
+* Total Stock Return
+* Yield to Maturity
+* Zero Coupon Bond Value
+* Zero Coupon Bond Yield
