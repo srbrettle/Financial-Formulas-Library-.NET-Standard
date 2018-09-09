@@ -163,6 +163,183 @@ namespace srbrettle.FinancialFormulas
         }
 
         /// <summary>
+        /// Calculates Doubling Time from Rate of Return
+        /// </summary>
+        /// <param name="rateOfReturn">Rate of Return</param>
+        /// <returns></returns>
+        public static decimal CalcDoublingTime(decimal rateOfReturn)
+        {
+            return (decimal)Math.Log(2) / (decimal)Math.Log((double)(1 + rateOfReturn));
+        }
+
+        /// <summary>
+        /// Calculates Doubling Time with Continuous Compounding from Rate
+        /// </summary>
+        /// <param name="rate">Rate</param>
+        /// <returns></returns>
+        public static decimal CalcDoublingTimeWithContinuousCompounding(decimal rate)
+        {
+            return (decimal)Math.Log(2) / rate;
+        }
+
+        /// <summary>
+        /// Calculates Doubling Time For Simple Interest
+        /// </summary>
+        /// <param name="rate">Rate</param>
+        /// <returns></returns>
+        public static decimal CalcDoublingTimeForSimpleInterest(decimal rate)
+        {
+            return 1 / rate;
+        }
+
+        /// <summary>
+        /// Calculates Future Value from Initial Cash Flow, Rate of Return and Number of Periods
+        /// </summary>
+        /// <param name="initialCashFlow">Initial Cash Flow</param>
+        /// <param name="rateOfReturn">Rate of Return</param>
+        /// <param name="numberOfPeriods">Number of Periods</param>
+        /// <returns></returns>
+        public static decimal CalcFutureValue(decimal initialCashFlow, decimal rateOfReturn, decimal numberOfPeriods)
+        {
+            return initialCashFlow * (decimal)Math.Pow((double)(1 + rateOfReturn), (double)numberOfPeriods);
+        }
+
+        /// <summary>
+        /// Calculates Future Value with Continuous Compounding from Present Value, Rate and Time
+        /// </summary>
+        /// <param name="presentValue">Present Value</param>
+        /// <param name="rate">Rate</param>
+        /// <param name="time">Time</param>
+        /// <returns></returns>
+        public static decimal CalcFutureValueWithContinuousCompounding(decimal presentValue, decimal rate, decimal time)
+        {
+            return presentValue * (decimal)Math.Exp((double)(rate * time));
+        }
+
+        /// <summary>
+        /// Calculates Future Value Factor from Rate per Period and Number of Periods
+        /// </summary>
+        /// <param name="ratePerPeriod">Rate per Period</param>
+        /// <param name="numberOfPeriods">Number of Periods</param>
+        /// <returns></returns>
+        public static decimal CalcFutureValueFactor(decimal ratePerPeriod, decimal numberOfPeriods)
+        {
+            return (decimal)Math.Pow((double)(1 + ratePerPeriod), (double)numberOfPeriods);
+        }
+
+        /// <summary>
+        /// CalculatesFuture Value of Growing Annuity from First Payment, Rate per Period, Growth Rate and Number of Periods
+        /// </summary>
+        /// <param name="firstPayment">First Payment</param>
+        /// <param name="ratePerPeriod">Rate per Period</param>
+        /// <param name="growthRate">Growth Rate</param>
+        /// <param name="numberOfPeriods">Number of Periods</param>
+        /// <returns></returns>
+        public static decimal CalcFutureValueOfGrowingAnnuity(decimal firstPayment, decimal ratePerPeriod, decimal growthRate, decimal numberOfPeriods)
+        {
+            decimal numerator = (decimal)Math.Pow((double)(1 + ratePerPeriod), (double)numberOfPeriods) - (decimal)Math.Pow((double)(1 + growthRate), (double)numberOfPeriods);
+            decimal denominator = ratePerPeriod - growthRate;
+            return firstPayment * (numerator / denominator);
+        }
+
+        /// <summary>
+        /// Calculates Growing Annuity Payment from Present Value from Present value, Rate per Period, Growth Rate and Number of Periods
+        /// </summary>
+        /// <param name="presentValue">Present Value</param>
+        /// <param name="ratePerPeriod">Rate per Period</param>
+        /// <param name="growthRate">Growth Rate</param>
+        /// <param name="numberOfPeriods">Number of Periods</param>
+        /// <returns></returns>
+        public static decimal CalcGrowingAnnuityPaymentFromPresentValue(decimal presentValue, decimal ratePerPeriod, decimal growthRate, decimal numberOfPeriods)
+        {
+            return presentValue * ((ratePerPeriod - growthRate) / (1 - (decimal)Math.Pow((double)((1 + growthRate) / (1 + ratePerPeriod)), (double)numberOfPeriods)));
+        }
+
+        /// <summary>
+        /// Calculates Growing Annuity Payment from Future Value from Future Value, Rate per Period, Growth Rate and Number of Periods
+        /// </summary>
+        /// <param name="futureValue">Future Value</param>
+        /// <param name="ratePerPeriod">Rate per Period</param>
+        /// <param name="growthRate">Growth Rate</param>
+        /// <param name="numberOfPeriods">Number of Periods</param>
+        /// <returns></returns>
+        public static decimal CalcGrowingAnnuityPaymentFromFutureValue(decimal futureValue, decimal ratePerPeriod, decimal growthRate, decimal numberOfPeriods)
+        {
+            return futureValue * ((ratePerPeriod - growthRate) / ((decimal)Math.Pow((double)(1 + ratePerPeriod), (double)numberOfPeriods) - (decimal)Math.Pow((double)(1 + growthRate), (double)numberOfPeriods)));
+        }
+
+        /// <summary>
+        /// Calculates Present Value of a Growing Annuity from First Payment, Rate per Period, Growth Rate and Number of Periods
+        /// </summary>
+        /// <param name="firstPayment">First Payment</param>
+        /// <param name="ratePerPeiod">Rate per Period</param>
+        /// <param name="growthRate">Growth Rate</param>
+        /// <param name="numberOfPeriods">Number of Periods</param>
+        /// <returns></returns>
+        public static decimal CalcPresentValueOfAGrowingAnnuity(decimal firstPayment, decimal ratePerPeiod, decimal growthRate, decimal numberOfPeriods)
+        {
+            return (firstPayment / (ratePerPeiod - growthRate)) * (1 - (decimal)(Math.Pow((double)((1 + growthRate) / (1 + ratePerPeiod)), (double)numberOfPeriods)));
+        }
+
+        /// <summary>
+        /// Calculates Present Value of Growing Perpetuity from Dividend or Coupon at First Period, Discount Rate and Growth Rate
+        /// </summary>
+        /// <param name="dividendOrCouponAtFirstPeriod">Dividend or Coupon at First Period</param>
+        /// <param name="discountRate">Discount Rate</param>
+        /// <param name="growthRate">Growth Rate</param>
+        /// <returns></returns>
+        public static decimal CalcPresentValueOfGrowingPerpetuity(decimal dividendOrCouponAtFirstPeriod, decimal discountRate, decimal growthRate)
+        {
+            return dividendOrCouponAtFirstPeriod / (discountRate - growthRate);
+        }
+        /// <summary>
+        /// Calculates Number of Periods for Present Value to reach Future Value
+        /// </summary>
+        /// <param name="futureValue">Future Value</param>
+        /// <param name="presentValue">Present Value</param>
+        /// <param name="ratePerPeriod">Rate per Period</param>
+        /// <returns></returns>
+        public static decimal CalcNumberOfPeriodsForPresentValueToReachFutureValue(decimal futureValue, decimal presentValue, decimal ratePerPeriod)
+        {
+            return (decimal)Math.Log((double)(futureValue / presentValue)) / (decimal)Math.Log((double)(1 + ratePerPeriod));
+        }
+
+        /// <summary>
+        /// Calculates Present Value of Perpetuity from Dividend or Coupon per Period and Discount Rate
+        /// </summary>
+        /// <param name="dividendOrCouponPerPeriod">Dividend or Coupon per Period</param>
+        /// <param name="discountRate">Discount Rate</param>
+        /// <returns></returns>
+        public static decimal CalcPresentValueOfPerpetuity(decimal dividendOrCouponPerPeriod, decimal discountRate)
+        {
+            return dividendOrCouponPerPeriod / discountRate;
+        }
+
+        /// <summary>
+        /// Calculate Present Value from Cash Flow After First Period, Rate of Return and Number of Periods
+        /// </summary>
+        /// <param name="CashFlowAfterFirstPeriod">Cash Flow After First Period</param>
+        /// <param name="rateOfReturn">Rate of return</param>
+        /// <param name="numberOfPeriods">Number of Periods</param>
+        /// <returns></returns>
+        public static decimal CalcPresentValue(decimal CashFlowAfterFirstPeriod, decimal rateOfReturn, decimal numberOfPeriods)
+        {
+            return CashFlowAfterFirstPeriod / (decimal)Math.Pow((double)(1 + rateOfReturn), (double)numberOfPeriods);
+        }
+
+        /// <summary>
+        /// Calculates Present Value with Continuous Compounding from Cash Flow, Rate and Time
+        /// </summary>
+        /// <param name="cashFlow">Cash Flow</param>
+        /// <param name="rate">Rate</param>
+        /// <param name="time">Time</param>
+        /// <returns></returns>
+        public static decimal CalculatePresentValueWithContinuousCompounding(decimal cashFlow, decimal rate, decimal time)
+        {
+            return cashFlow / (decimal)Math.Exp((double)(rate * time));
+        }
+
+        /// <summary>
         /// Calculates Present Value Factor from Rate of Return and Number of Periods
         /// </summary>
         /// <param name="rateOfReturn">Rate of Return</param>
@@ -188,7 +365,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="lengthOfTime">Length of Time</param>
         /// <returns></returns>
-        public static decimal CalcRateRequiredToDouble(decimal lengthOfTime)
+        public static decimal CalcRateRequiredToDoubleByRuleOf72(decimal lengthOfTime)
         {
             return (72 / lengthOfTime) / 100;
         }
