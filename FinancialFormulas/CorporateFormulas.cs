@@ -120,12 +120,11 @@ namespace srbrettle.FinancialFormulas
         /// <summary>
         /// Calculates for Equivalent Annual Annuity from Equivalent Annuity Cashflow, Net Present Value, Rate per Period and Number of Periods
         /// </summary>
-        /// <param name="equivalentAnnuityCashFlow">Equivalent Annuity Cashflow</param>
         /// <param name="netPresentValue">Net Present Value</param>
         /// <param name="ratePerPeriod">Rate per Period</param>
         /// <param name="numberOfPeriods">Number of Periods</param>
         /// <returns></returns>
-        public static decimal CalcEquivalentAnnualAnnuity(decimal equivalentAnnuityCashFlow, decimal netPresentValue, decimal ratePerPeriod, decimal numberOfPeriods)
+        public static decimal CalcEquivalentAnnualAnnuity(decimal netPresentValue, decimal ratePerPeriod, decimal numberOfPeriods)
         {
             return (ratePerPeriod * netPresentValue) / (1 - (decimal)Math.Pow(1 + (double)ratePerPeriod, (double)-numberOfPeriods));
         }
