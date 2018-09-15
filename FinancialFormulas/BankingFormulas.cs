@@ -105,7 +105,7 @@ namespace srbrettle.FinancialFormulas
         public static decimal CalcRemainingBalanceOnLoan(decimal presentValue, decimal payment, decimal ratePerPayment, decimal numberOfPayments)
         {
             return presentValue * (decimal)Math.Pow((double)(1 + ratePerPayment), (double)numberOfPayments)
-                - ((decimal)(Math.Pow((double)(1 + ratePerPayment), (double)numberOfPayments) - 1) / ratePerPayment);
+                - payment * ((decimal)(Math.Pow((double)(1 + ratePerPayment), (double)numberOfPayments) - 1) / ratePerPayment);
         }
 
         /// <summary>
