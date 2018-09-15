@@ -9,11 +9,11 @@ Java, Python and C++ implementations are available [here](https://github.com/srb
 
 ## Getting Started - C#
 
-### Using NuGet [![NuGet](https://img.shields.io/badge/NuGet-1.2.0-blue.svg)](https://www.nuget.org/packages/FinancialFormulas/1.2.0)
+### Using NuGet [![NuGet](https://img.shields.io/badge/NuGet-1.2.1-blue.svg)](https://www.nuget.org/packages/FinancialFormulas/1.2.1)
 
 1. Within your project, install FinancialFormulas NuGet package (via "Manage Packages for Solution" or running the following in "Packet Manager Console".
 ```PowerShell
-Install-Package FinancialFormulas -Version 1.2.0
+Install-Package FinancialFormulas -Version 1.2.1
 ```
 2. Reference the Namespace:
 ```c#
@@ -133,3 +133,61 @@ This project is licensed under the MIT License - see the [LICENSE](/LICENSE) fil
 * Yield to Maturity
 * Zero Coupon Bond Value
 * Zero Coupon Bond Yield
+### CorporateFormulas.cs
+* Asset to Sales Ratio
+* Asset Turnover Ratio
+* Avg Collection Period
+* Contribution Margin
+* Current Ratio
+* Days in Inventory
+* Debt Coverage Ratio
+* Debt Ratio
+* Debt to Equity Ratio
+* Discounted Payback Period
+* Equivalent Annual Annuity
+* Free Cash Flow to Equity (FCFE)
+* Free Cash Flow to Firm (FCFF)
+* Interest Coverage Ratio
+* Inventory Turnover Ratio
+* Net Present Value
+* Net Profit Margin
+* Net Working Capital
+* Payback Period
+* Quick Ratio
+* Receivables Turnover Ratio
+* Retention Ratio
+* Return on Assets (ROA)
+* Return on Equity (ROE)
+* Return on Investment
+### GeneralFinanceFormulas.cs
+* Annuity - Future Value
+* Annuity - Future Value w/ Continuous Compounding
+* Annuity - (FV) Solve for n
+* Annuity - Payment (PV)
+* Annuity - Payment (FV)
+* Annuity - (PV) Solve for n
+* Annuity - Present Value
+* Avg Collection Period
+* Annuity - PV Factor
+* Annuity Due - Present Value
+* Annuity Due - Future Value
+* Annuity Due Payment (PV)
+* Annuity Due Payment (FV)
+* Doubling Time
+* Doubling Time - Cont. Compounding
+* Doubling Time - Simple Interest
+* Future Value
+* FV - Continuous Compounding
+* Future Value Factor
+* Growing Annuity - Future Value
+* Growing Annuity - Payment (PV)
+* Growing Annuity - Payment (FV)
+* Growing Annuity - Present Value
+* Growing Perpetuity - Present Value
+* Number of Periods - PV & FV
+* Perpetuity
+* Present Value
+* PV - Continuous Compounding
+* Present Value Factor
+* Rule of 72
+* Weighted Average
