@@ -6,205 +6,207 @@ namespace UnitTest_FinancialFormulas
 {
     public class UnitTest_StocksBondsFormulas {
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcBidAskSpread()
         {
-            // return ask - bid;
+            var result = StocksBondsFormulas.CalcBidAskSpread(37.75m, 37.80m);
+            Assert.Equal(0.05m, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcBondEquivalentYield()
         {
-            // return ((faceValue - bondPice) / bondPice) * (365 / daysToMaturity);
+            var result = StocksBondsFormulas.CalcBondEquivalentYield(135, 125, 365);
+            Assert.Equal(0.08m, Math.Round(result, 2, MidpointRounding.AwayFromZero));           
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcBookValuePerShare()
         {
-            // return totalCommonStockholdersEquity / numberOfCommonShares;
+            var result = StocksBondsFormulas.CalcBookValuePerShare(150000, 3000);
+            Assert.Equal(50, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcCapitalAssetPricingModel()
         {
-            // return riskFreeRate + beta * (// returnOnTheMarket - riskFreeRate);
+            var result = StocksBondsFormulas.CalcCapitalAssetPricingModel(1, 1.5m, 5);
+            Assert.Equal(7.0m, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcCapitalGainsYield()
         {
-            // return (endingStockPrice - initialStockPrice) / initialStockPrice;
+            var result = StocksBondsFormulas.CalcCapitalGainsYield(435,550);
+            Assert.Equal(0.26437m, Math.Round(result, 5, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcCurrentYield()
         {
-            // return annualCoupons / currentBondPrice;
+            var result = StocksBondsFormulas.CalcCurrentYield(100,900);
+            Assert.Equal(0.1111m, Math.Round(result, 4, MidpointRounding.AwayFromZero));            
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcDilutedEarningsPerShare()
         {
-            // return netIncome / (averageShares + otherConvertibleInstruments);
+            var result = StocksBondsFormulas.CalcDilutedEarningsPerShare(1135000, 3000, 450);
+            Assert.Equal(328.99m, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcDividendPayoutRatio()
         {
-            // return dividends / netIncome;
+            var result = StocksBondsFormulas.CalcDividendPayoutRatio(270000, 330000);
+            Assert.Equal(0.81818m, Math.Round(result, 5, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcDividendYield()
         {
-            // return dividendsForThePeriod / initialPriceForThePeriod;
+            var result = StocksBondsFormulas.CalcDividendYield(4.35m, 63);
+            Assert.Equal(0.06905m, Math.Round(result, 5, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcDividendsPerShare()
         {
-            // return dividends / numberOfShares;
+            var result = StocksBondsFormulas.CalcDividendsPerShare(270000, 3000);
+            Assert.Equal(90, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcEarningsPerShare()
         {
-            // return netIncome / weightedAverageOutstandingShares;
+            var result = StocksBondsFormulas.CalcEarningsPerShare(330000, 3000);
+            Assert.Equal(110, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcEquityMultiplier()
         {
-            // return totalAssets / stockholdersEquity;
+            var result = StocksBondsFormulas.CalcEquityMultiplier(540000, 470000);
+            Assert.Equal(1.149m, Math.Round(result, 3, MidpointRounding.AwayFromZero));            
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcEquityMultiplierAlternative()
         {
-            // return 1 / equityRatio;
+            var result = StocksBondsFormulas.CalcEquityMultiplier(0.8m);
+            Assert.Equal(1.25m, Math.Round(result, 2, MidpointRounding.AwayFromZero));            
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcEstimatedEarnings()
         {
-            // return forecastedSales - forecastedExpenses;
+            var result = StocksBondsFormulas.CalcEstimatedEarnings(550000, 430000);
+            Assert.Equal(120000m, Math.Round(result, 2, MidpointRounding.AwayFromZero));            
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcEstimatedEarningsWithProfitMargin()
         {
-            // return projectedSales * projectedNetProfitMargin;
-
+            var result = StocksBondsFormulas.CalcEstimatedEarningsWithProfitMargin(550000, 0.11m);
+            Assert.Equal(60500, Math.Round(result, 2, MidpointRounding.AwayFromZero));           
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcGeometricMeanReturn()
         {
-            /*
-            // numberOfPeriods = ratesOfReturn.Count;
-            // denominator = 0;
-            foreach ()
-            {
-                denominator *= (1 + rateOfReturn);
-            }
-
-            if (numberOfPeriods != 0 || denominator != 0)
-            {
-                // return (Math.Pow(denominator, 1 / numberOfPeriods) - 1);
-            }
-            // return 0;
-            */
+            var result = StocksBondsFormulas.CalcGeometricMeanReturn(new decimal[] { 0.11m, 0.09m, 0.08m, 0.07m, 0.05m });
+            Assert.Equal(0.08m, Math.Round(result, 2, MidpointRounding.AwayFromZero));            
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcHoldingPeriodReturn()
         {
-            /*
-            int numberOfPeriods = percentagePeriodReturns.Count;
-            double a = 0;
-            foreach ()
-            {
-                a *= (1 + periodReturn);
-            }
-
-            if (numberOfPeriods != 0 || a != 0)
-            {
-                // return a - 1;
-            }
-            // return 0;
-            */
+            var result = StocksBondsFormulas.CalcHoldingPeriodReturn(new decimal[] { 0.11m, 0.09m, 0.08m, 0.07m, 0.05m });
+            Assert.Equal(0.46807m, Math.Round(result, 5, MidpointRounding.AwayFromZero));            
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcHoldingPeriodReturnAlternative()
         {
-            // return Math.Pow(1 + periodicRate, numberOfPeriods) - 1;
+            var result = StocksBondsFormulas.CalcHoldingPeriodReturn(0.1m, 10);
+            Assert.Equal(1.59374m, Math.Round(result, 5, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcHoldingPeriodReturnAlternative2()
         {
-            // return (earnings + assetAppreciation) / initialInvestment;
+            var result = StocksBondsFormulas.CalcHoldingPeriodReturn(30000, 5000, 25000);
+            Assert.Equal(1.4m, Math.Round(result, 2, MidpointRounding.AwayFromZero));            
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcNetAssetValue()
         {
-            // return (fundAssets - fundLiabilities) / outstandingShares;
+            var result = StocksBondsFormulas.CalcNetAssetValue(6000, 4000, 5000);
+            Assert.Equal(0.40m, Math.Round(result, 2, MidpointRounding.AwayFromZero));            
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcPreferredStockValue()
         {
-            // return dividend / discountRate;
+            var result = StocksBondsFormulas.CalcPreferredStockValue(20, 0.04m);
+            Assert.Equal(500, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcRateOfReturn()
         {
-            // return dividend / price;
+            var result = StocksBondsFormulas.CalcRateOfReturn(4, 40);
+            Assert.Equal(0.1m, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcPriceToBookValueRatio()
         {
-            // return marketPricePerShare / bookValuePerShare;
+            var result = StocksBondsFormulas.CalcPriceToBookValueRatio(500, 400);
+            Assert.Equal(1.25m, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcPriceToEarningsRatio()
         {
-            // return pricePerShare / earningsPerShare;
+            var result = StocksBondsFormulas.CalcPriceToEarningsRatio(500, 400);
+            Assert.Equal(1.25m, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcPriceToSalesRatio()
         {
-            // return pricePerShare / salesPerShare;
+            var result = StocksBondsFormulas.CalcPriceToSalesRatio(500, 400);
+            Assert.Equal(1.25m, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcRiskPremium()
         {
-            // return assetOrInvestmentReturn - riskFreeReturn;
+            var result = StocksBondsFormulas.CalcRiskPremium(500, 200);
+            Assert.Equal(300, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcStockPresentValueWithConstantGrowth()
         {
-            // return estimatedDividendsForNextPeriod / (requiredRateOfReturn - growthRate);
+            var result = StocksBondsFormulas.CalcStockPresentValueWithConstantGrowth(20, 0.04m, 0.03m);
+            Assert.Equal(2000, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcGrowthRate()
         {
-            // return retentionRate * // returnOnEquity;
+            var result = StocksBondsFormulas.CalcGrowthRate(0.04m, 2);
+            Assert.Equal(0.08m, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
-        [Fact(Skip = "Test under development")]
+        [Fact]
         public void UnitTest_CalcRequiredRateOfReturn()
         {
-            // return dividendYield + growthRate;
+            var result = StocksBondsFormulas.CalcRequiredRateOfReturn(0.04m, 0.08m);
+            Assert.Equal(0.12m, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
 
         [Fact(Skip = "Test under development")]

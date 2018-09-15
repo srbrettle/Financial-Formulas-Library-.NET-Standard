@@ -23,12 +23,12 @@ namespace srbrettle.FinancialFormulas
         /// Calculates Bond Equivalent Yield from Face Value, Bond Price and Days to Maturity
         /// </summary>
         /// <param name="faceValue">Face Value</param>
-        /// <param name="bondPice">Bond Price</param>
+        /// <param name="bondPrice">Bond Price</param>
         /// <param name="daysToMaturity">Days to Maturity</param>
         /// <returns></returns>
-        public static decimal CalcBondEquivalentYield(decimal faceValue, decimal bondPice, decimal daysToMaturity)
+        public static decimal CalcBondEquivalentYield(decimal faceValue, decimal bondPrice, decimal daysToMaturity)
         {
-            return ((faceValue - bondPice) / bondPice) * (365 / daysToMaturity);
+            return ((faceValue - bondPrice) / bondPrice) * (365 / daysToMaturity);
         }
 
         /// <summary>
@@ -183,15 +183,15 @@ namespace srbrettle.FinancialFormulas
         public static decimal CalcGeometricMeanReturn(ICollection ratesOfReturn)
         {
             int numberOfPeriods = ratesOfReturn.Count;
-            decimal denominator = 0;
+            decimal root = 1;
             foreach (decimal rateOfReturn in ratesOfReturn)
-            {
-                denominator *= (1 + rateOfReturn);
+            {                
+                root *= (1 + rateOfReturn);
             }
 
-            if (numberOfPeriods != 0 || denominator != 0)
-            {
-                return (decimal)Math.Pow((double)denominator, 1 / numberOfPeriods) - 1;
+            if (numberOfPeriods > 0)
+            {                
+                return (decimal)Math.Pow((double)root, (double) decimal.Divide(1, numberOfPeriods)) - 1;
             }
             return 0;
         }
@@ -204,13 +204,13 @@ namespace srbrettle.FinancialFormulas
         public static decimal CalcHoldingPeriodReturn(ICollection percentagePeriodReturns)
         {
             int numberOfPeriods = percentagePeriodReturns.Count;
-            decimal a = 0;
+            decimal a = 1;
             foreach (decimal periodReturn in percentagePeriodReturns)
             {
                 a *= (1 + periodReturn);
             }
 
-            if (numberOfPeriods != 0 || a != 0)
+            if (numberOfPeriods > 0)
             {
                 return a - 1;
             }
