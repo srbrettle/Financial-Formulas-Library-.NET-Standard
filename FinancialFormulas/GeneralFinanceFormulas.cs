@@ -16,9 +16,9 @@ namespace srbrettle.FinancialFormulas
         /// <param name="ratePerPriod">Rate per Period</param>
         /// <param name="numberOfPeriods">Number of Periods</param>
         /// <returns></returns>
-        public static decimal CalcFutureValueOfAnnuity(decimal periodicPayment, decimal ratePerPriod, decimal numberOfPeriods)
+        public static decimal CalcFutureValueOfAnnuity(decimal periodicPayment, decimal ratePerPeriod, decimal numberOfPeriods)
         {
-            return periodicPayment * (((decimal)Math.Pow((double)(1 + ratePerPriod), (double)numberOfPeriods) - 1) / ratePerPriod);
+            return periodicPayment * (((decimal)Math.Pow((double)(1 + ratePerPeriod), (double)numberOfPeriods) - 1) / ratePerPeriod);
         }
 
         /// <summary>
