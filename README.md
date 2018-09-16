@@ -1,4 +1,4 @@
-# Financial-Formulas-API-.NET-Core [![Build status](https://ci.appveyor.com/api/projects/status/iy080gvd0x4gmt3c?svg=true)](https://ci.appveyor.com/project/srbrettle/financial-formulas-api-net-core) [![Build Status](https://travis-ci.org/srbrettle/Financial-Formulas-API-.NET-Core.svg?branch=master)](https://travis-ci.org/srbrettle/Financial-Formulas-API-.NET-Core) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/srbrettle/Financial-Formulas-API-.NET-Core/issues)
+# Financial-Formulas-Library-.NET-Core [![Build status](https://ci.appveyor.com/api/projects/status/iy080gvd0x4gmt3c?svg=true)](https://ci.appveyor.com/project/srbrettle/financial-formulas-api-net-core) [![Build Status](https://travis-ci.org/srbrettle/Financial-Formulas-API-.NET-Core.svg?branch=master)](https://travis-ci.org/srbrettle/Financial-Formulas-API-.NET-Core) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/srbrettle/Financial-Formulas-API-.NET-Core/issues)
 
 A collection of methods for solving Finance/Accounting equations, implemented in C#. 
 Java, Python and C++ implementations are available [here](https://github.com/srbrettle/Financial-Formulas).
@@ -9,11 +9,11 @@ Java, Python and C++ implementations are available [here](https://github.com/srb
 
 ## Getting Started - C#
 
-### Using NuGet [![NuGet](https://img.shields.io/badge/NuGet-1.2.1-blue.svg)](https://www.nuget.org/packages/FinancialFormulas/1.2.1)
+### Using NuGet [![NuGet](https://img.shields.io/badge/NuGet-1.2.2-blue.svg)](https://www.nuget.org/packages/FinancialFormulas/1.2.2)
 
 1. Within your project, install FinancialFormulas NuGet package (via "Manage Packages for Solution" or running the following in "Packet Manager Console".
 ```PowerShell
-Install-Package FinancialFormulas -Version 1.2.1
+Install-Package FinancialFormulas -Version 1.2.2
 ```
 2. Reference the Namespace:
 ```c#
