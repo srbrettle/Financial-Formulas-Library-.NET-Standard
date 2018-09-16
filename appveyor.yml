@@ -5,7 +5,7 @@ before_build:
 build:
   verbosity: minimal
 test_script:  
-   - OpenCover.Console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test Test/" -filter:"+[FinancialFormulas*]* -[Test*]*" -output:".\coverage.xml" -oldstyle
+   - OpenCover.Console.exe -register:user -target:"packages\xunit.runner.console.2.2.0\tools\xunit.console.x86.exe" -targetargs:".\Test\bin\Debug\netcoreapp2.1\UnitTest.FinancialFormulas.dll -noshadow" -filter:"+[FinancialFormulas*]* -[Test*]*" -output:".\coverage.xml" -oldstyle
 after_test:
   - ps: |
       $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
