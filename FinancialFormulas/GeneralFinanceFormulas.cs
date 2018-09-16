@@ -269,14 +269,14 @@ namespace srbrettle.FinancialFormulas
         }
 
         /// <summary>
-        /// Calculates Present Value of a Growing Annuity from First Payment, Rate per Period, Growth Rate and Number of Periods
+        /// Calculates Present Value of Growing Annuity from First Payment, Rate per Period, Growth Rate and Number of Periods
         /// </summary>
         /// <param name="firstPayment">First Payment</param>
         /// <param name="ratePerPeiod">Rate per Period</param>
         /// <param name="growthRate">Growth Rate</param>
         /// <param name="numberOfPeriods">Number of Periods</param>
         /// <returns></returns>
-        public static decimal CalcPresentValueOfAGrowingAnnuity(decimal firstPayment, decimal ratePerPeiod, decimal growthRate, decimal numberOfPeriods)
+        public static decimal CalcPresentValueOfGrowingAnnuity(decimal firstPayment, decimal ratePerPeiod, decimal growthRate, decimal numberOfPeriods)
         {
             return (firstPayment / (ratePerPeiod - growthRate)) * (1 - (decimal)(Math.Pow((double)((1 + growthRate) / (1 + ratePerPeiod)), (double)numberOfPeriods)));
         }
