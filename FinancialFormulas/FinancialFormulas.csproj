@@ -4,17 +4,17 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright></Copyright>
-    <PackageLicenseUrl>https://github.com/srbrettle/Financial-Formulas-API-.NET-Core/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/srbrettle/Financial-Formulas-API-.NET-Core</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/srbrettle/Financial-Formulas-Library-.NET-Core/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/srbrettle/Financial-Formulas-Library-.NET-Core</PackageProjectUrl>
     <Authors>Scott Brettle</Authors>
     <Company />
     <Product />
     <Description>A collection of methods for solving Finance/Accounting equations.</Description>
     <PackageTags>financial, formulas, equations, calculations, finance, accounting, economics, invest, math, mathematics, business, entrepreneur, banking</PackageTags>
-    <RepositoryUrl>https://github.com/srbrettle/Financial-Formulas-API-.NET-Core</RepositoryUrl>
+    <RepositoryUrl>https://github.com/srbrettle/Financial-Formulas-Library-.NET-Core</RepositoryUrl>
     <Version>1.2.2</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-    <PackageIconUrl>https://raw.githubusercontent.com/srbrettle/Financial-Formulas-API-.NET-Core/master/FinancialFormulas.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/srbrettle/Financial-Formulas-Library-.NET-Core/master/FinancialFormulas.png</PackageIconUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
