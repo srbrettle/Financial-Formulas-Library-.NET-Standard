@@ -5,7 +5,7 @@ before_build:
 build:
   verbosity: minimal
 test_script:  
-   - .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:"Test\bin\Debug\netcoreapp2.1\UnitTest.FinancialFormulas.dll -noshadow" -output:"coverage.xml" -filter:"+[FinancialFormulas*]* -[Test*]*"
+   - .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\Test\bin\Debug\netcoreapp2.1\UnitTest.FinancialFormulas.dll -noshadow" -output:"coverage.xml" -filter:"+[FinancialFormulas*]* -[Test*]*"
 after_test:
   - ps: |
       $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
