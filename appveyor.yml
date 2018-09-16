@@ -5,7 +5,7 @@ before_build:
 build:
   verbosity: minimal
 test_script:  
-   - .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:test -filter:"+[FinancialFormulas*]* -[Test*]*" -output:".\coverage.xml" -oldstyle
+   - OpenCover.Console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:test -filter:"+[FinancialFormulas*]* -[Test*]*" -output:".\coverage.xml" -oldstyle
 after_test:
   - ps: |
       $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
