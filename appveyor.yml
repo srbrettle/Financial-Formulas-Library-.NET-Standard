@@ -3,7 +3,7 @@ image: Visual Studio 2017
 before_build:
 - cmd: dotnet restore
 build:
-  verbosity: minimal
+  verbosity: quiet 
 test_script:  
    - OpenCover.Console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test Test/" -filter:"+[srbrettle.FinancialFormulas*]* -[UnitTest_FinancialFormulas*]*" -output:".\coverage.xml" -oldstyle
 after_test:
