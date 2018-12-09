@@ -12,11 +12,11 @@ Java, Python and C++ implementations are available [here](https://github.com/srb
 
 ## Getting Started - C#
 
-### Using NuGet [![NuGet](https://img.shields.io/badge/NuGet-1.2.2-blue.svg)](https://www.nuget.org/packages/FinancialFormulas/1.2.2)
+### Using NuGet [![NuGet](https://img.shields.io/badge/NuGet-1.2.3-blue.svg)](https://www.nuget.org/packages/FinancialFormulas/1.2.3)
 
 1. Within your project, install FinancialFormulas NuGet package (via "Manage Packages for Solution" or running the following in "Packet Manager Console".
 ```PowerShell
-Install-Package FinancialFormulas -Version 1.2.2
+Install-Package FinancialFormulas -Version 1.2.3
 ```
 2. Reference the Namespace:
 ```c#
