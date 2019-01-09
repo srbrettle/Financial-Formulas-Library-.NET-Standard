@@ -141,5 +141,41 @@ namespace srbrettle.FinancialFormulas
         {
             return principal * rate * time;
         }
+
+        /// <summary>
+        /// Calculates Simple Interest Rate from Principal, Interest and Time
+        /// </summary>
+        /// <param name="principal">Principal</param>
+        /// <param name="interest">Interest</param>
+        /// <param name="time">Time</param>
+        /// <returns></returns>
+        public static decimal CalcSimpleInterestRate(decimal principal, decimal interest, decimal time)
+        {
+            return interest / (principal * time);
+        }
+
+        /// <summary>
+        /// Calculates Simple Interest Principal from Interest, Rate and Time
+        /// </summary>
+        /// <param name="interest">Interest</param>
+        /// <param name="rate">Rate</param>
+        /// <param name="time">Time</param>
+        /// <returns></returns>
+        public static decimal CalcSimpleInterestPrincipal(decimal interest, decimal rate, decimal time)
+        {
+            return interest / (rate * time);
+        }
+
+        /// <summary>
+        /// Calculates Simple Interest Time from Principal, Interest, and Rate
+        /// </summary>
+        /// <param name="principal">Principal</param>
+        /// <param name="interest">Interest</param>
+        /// <param name="rate">Rate</param>        
+        /// <returns></returns>
+        public static decimal CalcSimpleInterestTime(decimal principal, decimal interest, decimal rate)
+        {
+            return interest / (rate * principal);
+        }
     }
 }

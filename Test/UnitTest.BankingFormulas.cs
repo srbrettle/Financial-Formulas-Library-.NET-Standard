@@ -82,5 +82,26 @@ namespace UnitTest_FinancialFormulas
             var result = BankingFormulas.CalcSimpleInterest(1000, 0.04m, 10);
             Assert.Equal(400, Math.Round(result, 2, MidpointRounding.AwayFromZero));
         }
+
+        [Fact]
+        public void UnitTest_CalcSimpleInterestRate()
+        {
+            var result = BankingFormulas.CalcSimpleInterestRate(1000, 400, 10);
+            Assert.Equal(0.04m, Math.Round(result, 2, MidpointRounding.AwayFromZero));
+        }
+
+        [Fact]
+        public void UnitTest_CalcSimpleInterestPrincipal()
+        {
+            var result = BankingFormulas.CalcSimpleInterestPrincipal(400, 0.04m, 10);
+            Assert.Equal(1000, Math.Round(result, 2, MidpointRounding.AwayFromZero));
+        }
+
+        [Fact]
+        public void UnitTest_CalcSimpleInterestTime()
+        {
+            var result = BankingFormulas.CalcSimpleInterestTime(1000, 400, 0.04m);
+            Assert.Equal(10, Math.Round(result, 2, MidpointRounding.AwayFromZero));
+        }
     }
 }
