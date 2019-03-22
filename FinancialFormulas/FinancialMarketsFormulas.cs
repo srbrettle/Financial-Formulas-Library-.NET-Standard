@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace srbrettle.FinancialFormulas
+﻿namespace srbrettle.FinancialFormulas
 {
     /// <summary>
     /// A collection of methods for solving Financial-Markets-focused Finance/Accounting equations.
@@ -12,7 +10,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="initialConsumerPriceIndex">Initial Consumer Price Index</param>
         /// <param name="endingConsumerPriceIndex">Ending Consumer Price Index</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Rate of Inflation</returns>
         public static decimal CalcRateOfInflation(decimal initialConsumerPriceIndex, decimal endingConsumerPriceIndex)
         {
             return (endingConsumerPriceIndex-initialConsumerPriceIndex)/initialConsumerPriceIndex;
@@ -23,7 +21,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="nominalRate">Nominal Rate</param>
         /// <param name="inflationRate">Inflation Rate</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Real Rate of Return</returns>
         public static decimal CalcRealRateOfReturn(decimal nominalRate, decimal inflationRate)
         {
             return ((1 + nominalRate) / (1 + inflationRate)) - 1;
