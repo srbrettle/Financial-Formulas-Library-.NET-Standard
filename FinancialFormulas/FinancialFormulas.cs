@@ -16,7 +16,7 @@
         /// </summary>
         /// <param name="netSales">Net Sales</param>
         /// <param name="totalAssets">Total Assets</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Asset Turnover</returns>
         public static decimal CalcAssetTurnover(decimal netSales, decimal totalAssets)
         {
             return netSales / totalAssets;
@@ -27,19 +27,19 @@
         /// </summary>
         /// <param name="accountsReceivable">Accounts Receivable</param>
         /// <param name="annualCreditSales">Annual Credit Sales</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Average Collection Period</returns>
         public static decimal CalcAverageCollectionPeriod(decimal accountsReceivable, decimal annualCreditSales)
         {
             return accountsReceivable / (annualCreditSales / 365);
         }
 
         /// <summary>
-        /// Calcualtes Cash Conversion Cycle from Inventory Conversion Period, Receivables Conversion Period and Payables Conversion Period
+        /// Calculates Cash Conversion Cycle from Inventory Conversion Period, Receivables Conversion Period and Payables Conversion Period
         /// </summary>
         /// <param name="inventoryConversionPeriod">Inventory Conversion Period</param>
         /// <param name="receivablesConversionPeriod">Receivables Conversion Period</param>
         /// <param name="payablesConversionPeriod">Payables Conversion Period</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Cash Conversion Cycle</returns>
         public static decimal CalcCashConversionCycle(decimal inventoryConversionPeriod, decimal receivablesConversionPeriod, decimal payablesConversionPeriod)
         {
             return (inventoryConversionPeriod
@@ -50,7 +50,7 @@
         /// Calculates Inventory Conversion Period from Inventory Turnover Ratio
         /// </summary>
         /// <param name="inventoryTurnoverRatio">Inventory Turnover Ratio</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Inventory Conversion Period</returns>
         public static decimal CalcInventoryConversionPeriod(decimal inventoryTurnoverRatio)
         {
             return 365 / inventoryTurnoverRatio;
@@ -61,7 +61,7 @@
         /// </summary>
         /// <param name="sales">Sales</param>
         /// <param name="costOfGoodsSold">Cost Of Goods Sold</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Inventory Conversion Ratio</returns>
         public static decimal CalcInventoryConversionRatio(decimal sales, decimal costOfGoodsSold)
         {
             return (sales / 2) / costOfGoodsSold;
@@ -72,7 +72,7 @@
         /// </summary>
         /// <param name="sales">Sales</param>
         /// <param name="averageInventory">Average Inventory</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Inventory Turnover</returns>
         public static decimal CalcInventoryTurnover(decimal sales, decimal averageInventory)
         {
             return sales / averageInventory;
@@ -83,7 +83,7 @@
         /// </summary>
         /// <param name="accountsPayable">Accounts Payable</param>
         /// <param name="purchases">Purchases</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Payables Conversion Period</returns>
         public static decimal CalcPayablesConversionPeriod(decimal accountsPayable, decimal purchases)
         {
             return (accountsPayable / purchases) * 365;
@@ -94,7 +94,7 @@
         /// </summary>
         /// <param name="receivables">Receivables</param>
         /// <param name="netSales">Net Sales</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Receivables Conversion Period</returns>
         public static decimal CalcReceivablesConversionPeriod(decimal receivables, decimal netSales)
         {
             return (receivables / netSales) * 365;
@@ -105,12 +105,12 @@
         /// </summary>
         /// <param name="netCreditSales">Net Credit Sales</param>
         /// <param name="averageNetReceivables">Average Net Receivables</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Receivables Turnover Ratio</returns>
         public static decimal CalcReceivablesTurnoverRatio(decimal netCreditSales, decimal averageNetReceivables)
         {
             return netCreditSales / averageNetReceivables;
         }
-        
+
         /*
          * -----------------------------------------------------------------------------
          * | Formulas - Basic                                                          |
@@ -122,7 +122,7 @@
         /// </summary>
         /// <param name="liabilities">Liabilities</param>
         /// <param name="equity">Equity</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Assets</returns>
         public static decimal CalcAssets(decimal liabilities, decimal equity)
         {
             return liabilities + equity;
@@ -133,7 +133,7 @@
         /// </summary>
         /// <param name="revenue">Revenue</param>
         /// <param name="operatingExpenses">Operating Expenses</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for EBIT</returns>
         public static decimal CalcEbit(decimal revenue, decimal operatingExpenses)
         {
             return revenue - operatingExpenses;
@@ -144,7 +144,7 @@
         /// </summary>
         /// <param name="assets">Assets</param>
         /// <param name="liabilities">Liabilities</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Equity</returns>
         public static decimal CalcEquity(decimal assets, decimal liabilities)
         {
             return assets - liabilities;
@@ -155,7 +155,7 @@
         /// </summary>
         /// <param name="revenue">Revenue</param>
         /// <param name="costOfGoodsSold">Cost Of Goods Sold</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Gross Profit</returns>
         public static decimal CalcGrossProfit(decimal revenue, decimal costOfGoodsSold)
         {
             return revenue - costOfGoodsSold;
@@ -166,7 +166,7 @@
         /// </summary>
         /// <param name="assets">Assets</param>
         /// <param name="equity">Equity</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Liabilities</returns>
         public static decimal CalcLiabilities(decimal assets, decimal equity)
         {
             return assets - equity;
@@ -179,7 +179,7 @@
         /// <param name="operatingExpenses">Operating Expenses</param>
         /// <param name="taxes">Taxes</param>
         /// <param name="interest">Interest</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Net Profit</returns>
         public static decimal CalcNetProfit(decimal grossProfit, decimal operatingExpenses, decimal taxes, decimal interest)
         {
             return grossProfit - operatingExpenses - taxes - interest;
@@ -190,7 +190,7 @@
         /// </summary>
         /// <param name="grossProfit">Gross Profit</param>
         /// <param name="operatingExpenses">Operating Expenses</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Operating Profit</returns>
         public static decimal CalcOperatingProfit(decimal grossProfit, decimal operatingExpenses)
         {
             return grossProfit - operatingExpenses;
@@ -201,7 +201,7 @@
         /// </summary>
         /// <param name="grossSales">Gross Sales</param>
         /// <param name="salesOfReturnsAndAllowances">Sales of Returns and Allowances</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Sales Revenue</returns>
         public static decimal CalcSalesRevenue(decimal grossSales, decimal salesOfReturnsAndAllowances)
         {
             return grossSales - salesOfReturnsAndAllowances;
@@ -218,29 +218,29 @@
         /// </summary>
         /// <param name="totalLiabilities">Total Liabilities</param>
         /// <param name="shareholderEquity">Shareholder Equity</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Debt to Equity Ratio</returns>
         public static decimal CalcDebtEquityRatio(decimal totalLiabilities, decimal shareholderEquity)
         {
             return totalLiabilities / shareholderEquity;
         }
 
         /// <summary>
-        /// Calculates Debt Ratio Total Liabilities and Total Assets
+        /// Calculates Debt Ratio from Total Liabilities and Total Assets
         /// </summary>
         /// <param name="totalLiabilities">Total Liabilities</param>
         /// <param name="totalAssets">Total Assets</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Debt Ratio</returns>
         public static decimal CalcDebtRatio(decimal totalLiabilities, decimal totalAssets)
         {
             return totalLiabilities / totalAssets;
         }
 
         /// <summary>
-        /// Calculates Debt-Service Coverage Ratio Net Operating Income and Total Debt Service
+        /// Calculates Debt-Service Coverage Ratio from Net Operating Income and Total Debt Service
         /// </summary>
         /// <param name="netOperatingIncome">Net Operating Income</param>
         /// <param name="totalDebtService">Total Debt Service</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Debt-Service Coverage Ratio</returns>
         public static decimal CalcDebtServiceCoverageRatio(decimal netOperatingIncome, decimal totalDebtService)
         {
             return netOperatingIncome / totalDebtService;
@@ -251,12 +251,12 @@
         /// </summary>
         /// <param name="longTermLiabilities">Long-Term Liabilities</param>
         /// <param name="equity">Equity</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Long-Term Debt to Equity Ratio</returns>
         public static decimal CalcLongTermDebtEquityRatio(decimal longTermLiabilities, decimal equity)
         {
             return longTermLiabilities / equity;
         }
-        
+
         /*
          * -----------------------------------------------------------------------------
          * | Formulas - Depreciation                                                   |
@@ -268,18 +268,18 @@
         /// </summary>
         /// <param name="acquisitionCost">Acquisition Cost</param>
         /// <param name="depreciation">Depreciation</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Book Value</returns>
         public static decimal CalcBookValue(decimal acquisitionCost, decimal depreciation)
         {
             return acquisitionCost - depreciation;
         }
 
         /// <summary>
-        /// Calculates Decling Balance from Depreciation Rate and Book Value at Beginning of Year
+        /// Calculates Declining Balance from Depreciation Rate and Book Value at Beginning of Year
         /// </summary>
         /// <param name="depreciationRate">Depreciation Rate</param>
         /// <param name="bookValueAtBeginningOfYear">Book Value at Beginning of Year</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Declining Balance</returns>
         public static decimal CalcDecliningBalance(decimal depreciationRate, decimal bookValueAtBeginningOfYear)
         {
             return depreciationRate * bookValueAtBeginningOfYear;
@@ -292,7 +292,7 @@
         /// <param name="residualValue">Residual Value</param>
         /// <param name="estimatedTotalProduction">Estimated Total Production</param>
         /// <param name="actualProduction">Actual Production</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Units of Production</returns>
         public static decimal CalcUnitsOfProduction(decimal costOfAsset, decimal residualValue, decimal estimatedTotalProduction, decimal actualProduction)
         {
             return ((costOfAsset - residualValue) / estimatedTotalProduction) * actualProduction;
@@ -304,12 +304,12 @@
         /// <param name="costOfFixedAsset">Cost of Fixed Asset</param>
         /// <param name="residualValue">Residual Value</param>
         /// <param name="usefulLifeOfAsset">Useful Life of Asset</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Straight Line Method</returns>
         public static decimal CalcStraightLineMethod(decimal costOfFixedAsset, decimal residualValue, decimal usefulLifeOfAsset)
         {
             return (costOfFixedAsset - residualValue) / usefulLifeOfAsset;
         }
-        
+
         /*
          * -----------------------------------------------------------------------------
          * | Formulas - Liquidity                                                      |
@@ -322,18 +322,18 @@
         /// <param name="cash">Cash</param>
         /// <param name="marketableSecurities">Marketable Securities</param>
         /// <param name="currentLiabilities">Current Liabilities</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Cash Ratio</returns>
         public static decimal CalcCashRatio(decimal cash, decimal marketableSecurities, decimal currentLiabilities)
         {
             return (cash + marketableSecurities) / currentLiabilities;
         }
 
         /// <summary>
-        /// Calculates Current Ratio from Current Assets and Current Liabilties
+        /// Calculates Current Ratio from Current Assets and Current Liabilities
         /// </summary>
         /// <param name="currentAssets">Current Assets</param>
         /// <param name="currentLiabilities">Current Liabilities</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Current Ratio</returns>
         public static decimal CalcCurrentRatio(decimal currentAssets, decimal currentLiabilities)
         {
             return currentAssets / currentLiabilities;
@@ -344,7 +344,7 @@
         /// </summary>
         /// <param name="operatingCashFlow">Operating Cash Flow</param>
         /// <param name="totalDebts">Total Debts</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Operating Cash Flow Ratio</returns>
         public static decimal CalcOperatingCashFlowRatio(decimal operatingCashFlow, decimal totalDebts)
         {
             return operatingCashFlow / totalDebts;
@@ -356,13 +356,13 @@
         /// <param name="currentAssets">Current Assets</param>
         /// <param name="inventories">Inventories</param>
         /// <param name="currentLiabilities">Current Liabilities</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Quick Ratio</returns>
         public static decimal CalcQuickRatio(decimal currentAssets, decimal inventories, decimal currentLiabilities)
         {
             return (currentAssets - inventories) / currentLiabilities;
         }
 
-        
+
         /*
          * -----------------------------------------------------------------------------
          * | Formulas - Market                                                          |
@@ -373,8 +373,8 @@
         /// Calculates Dividend Cover from Earnings Per Share and Dividends Per Share
         /// </summary>
         /// <param name="earningsPerShare">Earnings Per Share</param>
-        /// <param name="dividendsPerShare">Devidends Per Share</param>
-        /// <returns></returns>
+        /// <param name="dividendsPerShare">Dividends Per Share</param>
+        /// <returns>Decimal value for Dividend Cover</returns>
         public static decimal CalcDividendCover(decimal earningsPerShare, decimal dividendsPerShare)
         {
             return earningsPerShare / dividendsPerShare;
@@ -385,7 +385,7 @@
         /// </summary>
         /// <param name="dividendsPaid">Dividends Paid</param>
         /// <param name="numberOfShares">Number of Shares</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Dividends Per Share</returns>
         public static decimal CalcDividendsPerShare(decimal dividendsPaid, decimal numberOfShares)
         {
             return dividendsPaid / numberOfShares;
@@ -396,7 +396,7 @@
         /// </summary>
         /// <param name="annualDividendPerShare">Annual Dividend Per Share</param>
         /// <param name="pricePerShare">Price Per Share</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Dividend Yield</returns>
         public static decimal CalcDividendYield(decimal annualDividendPerShare, decimal pricePerShare)
         {
             return annualDividendPerShare / pricePerShare;
@@ -407,7 +407,7 @@
         /// </summary>
         /// <param name="netEarnings">Net Earnings</param>
         /// <param name="numberOfShares">Number of Shares</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Earnings Per Share</returns>
         public static decimal CalcEarningsPerShare(decimal netEarnings, decimal numberOfShares)
         {
             return netEarnings / numberOfShares;
@@ -418,7 +418,7 @@
         /// </summary>
         /// <param name="dividends">Dividends</param>
         /// <param name="earnings">Earnings</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Payout Ratio</returns>
         public static decimal CalcPayoutRatio(decimal dividends, decimal earnings)
         {
             return dividends / earnings;
@@ -429,7 +429,7 @@
         /// </summary>
         /// <param name="pricePerEarnings">Price Per Earnings</param>
         /// <param name="annualEpsGrowth">Annual EPS Growth</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for PEG Ratio</returns>
         public static decimal CalcPegRatio(decimal pricePerEarnings, decimal annualEpsGrowth)
         {
             return pricePerEarnings / annualEpsGrowth;
@@ -440,7 +440,7 @@
         /// </summary>
         /// <param name="pricePerShare">Price Per Share</param>
         /// <param name="revenuePerShare">Revenue Per Share</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Price to Sales Ratio</returns>
         public static decimal CalcPriceSalesRatio(decimal pricePerShare, decimal revenuePerShare)
         {
             return pricePerShare / revenuePerShare;
@@ -457,7 +457,7 @@
         /// </summary>
         /// <param name="nonInterestExpense">Non-Interest Expense</param>
         /// <param name="revenue">Revenue</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Efficiency Ratio</returns>
         public static decimal CalcEfficiencyRatio(decimal nonInterestExpense, decimal revenue)
         {
             return nonInterestExpense / revenue;
@@ -468,7 +468,7 @@
         /// </summary>
         /// <param name="grossProfit">Gross Profit</param>
         /// <param name="revenue">Revenue</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Gross Profit Margin</returns>
         public static decimal CalcGrossProfitMargin(decimal grossProfit, decimal revenue)
         {
             return grossProfit / revenue;
@@ -479,7 +479,7 @@
         /// </summary>
         /// <param name="operatingIncome">Operating Income</param>
         /// <param name="revenue">Revenue</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Operating Margin</returns>
         public static decimal CalcOperatingMargin(decimal operatingIncome, decimal revenue)
         {
             return operatingIncome / revenue;
@@ -490,7 +490,7 @@
         /// </summary>
         /// <param name="netProfit">Net Profit</param>
         /// <param name="revenue">Revenue</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Profit Margin</returns>
         public static decimal CalcProfitMargin(decimal netProfit, decimal revenue)
         {
             return netProfit / revenue;
@@ -501,7 +501,7 @@
         /// </summary>
         /// <param name="netIncome">Net Income</param>
         /// <param name="totalAssets">Total Assets</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Return On Assets</returns>
         public static decimal CalcReturnOnAssets(decimal netIncome, decimal totalAssets)
         {
             return netIncome / totalAssets;
@@ -513,7 +513,7 @@
         /// <param name="ebit">Earnings Before Interest and Taxes</param>
         /// <param name="taxRate">Tax Rate</param>
         /// <param name="investedCapital">Invested Capital</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Return On Capital</returns>
         public static decimal CalcReturnOnCapital(decimal ebit, decimal taxRate, decimal investedCapital)
         {
             return ebit * (1 - taxRate) / investedCapital;
@@ -524,7 +524,7 @@
         /// </summary>
         /// <param name="netIncome">Net Income</param>
         /// <param name="averageShareholderEquity">Average Shareholder Equity</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Return On Equity</returns>
         public static decimal CalcReturnOnEquity(decimal netIncome, decimal averageShareholderEquity)
         {
             return netIncome / averageShareholderEquity;
@@ -536,7 +536,7 @@
         /// <param name="netIncome">Net Income</param>
         /// <param name="fixedAssets">Fixed Assets</param>
         /// <param name="workingCapital">Working Capital</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Return On Net Assets</returns>
         public static decimal CalcReturnOnNetAssets(decimal netIncome, decimal fixedAssets, decimal workingCapital)
         {
             return netIncome / (fixedAssets + workingCapital);
@@ -547,7 +547,7 @@
         /// </summary>
         /// <param name="expectedReturn">Expected Return</param>
         /// <param name="economicCapital">Economic Capital</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Risk Adjusted Return On Capital</returns>
         public static decimal CalcRiskAdjustedReturnOnCapital(decimal expectedReturn, decimal economicCapital)
         {
             return expectedReturn / economicCapital;
@@ -558,7 +558,7 @@
         /// </summary>
         /// <param name="gain">Gain</param>
         /// <param name="cost">Cost</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Return On Investment</returns>
         public static decimal CalcReturnOnInvestment(decimal gain, decimal cost)
         {
             return (gain - cost) / cost;
@@ -570,7 +570,7 @@
         /// <param name="ebit">Earnings Before Interest and Taxes</param>
         /// <param name="depreciation">Depreciation</param>
         /// <param name="amortization">Amortization</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for EBITDA</returns>
         public static decimal CalcEbitda(decimal ebit, decimal depreciation, decimal amortization)
         {
             return ebit + depreciation + amortization;

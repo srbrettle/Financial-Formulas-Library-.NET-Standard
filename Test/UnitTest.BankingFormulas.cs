@@ -1,5 +1,5 @@
-using srbrettle.FinancialFormulas;
 using System;
+using srbrettle.FinancialFormulas;
 using Xunit;
 
 namespace UnitTest_FinancialFormulas
@@ -9,7 +9,7 @@ namespace UnitTest_FinancialFormulas
 		[Fact]	
 		public void UnitTest_CalcAnnualPercentageYield()
         {
-            var result = BankingFormulas.CalcAnnualPercentageYield(0.04m , 12);
+            var result = BankingFormulas.CalcAnnualPercentageYield(0.04m, 12);
             Assert.Equal(0.0407415m, Math.Round(result, 7, MidpointRounding.AwayFromZero));
 		}
 

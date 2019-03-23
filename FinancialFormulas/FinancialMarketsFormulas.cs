@@ -13,7 +13,7 @@
         /// <returns>Decimal value for Rate of Inflation</returns>
         public static decimal CalcRateOfInflation(decimal initialConsumerPriceIndex, decimal endingConsumerPriceIndex)
         {
-            return (endingConsumerPriceIndex-initialConsumerPriceIndex)/initialConsumerPriceIndex;
+            return (endingConsumerPriceIndex - initialConsumerPriceIndex) / initialConsumerPriceIndex;
         }
 
         /// <summary>

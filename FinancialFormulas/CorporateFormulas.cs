@@ -13,18 +13,18 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="totalAssets">Total Assets</param>
         /// <param name="salesRevenue">Sales Revenue</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Asset to Sales Ratio</returns>
         public static decimal CalcAssetToSalesRatio(decimal totalAssets, decimal salesRevenue)
         {
             return totalAssets / salesRevenue;
         }
 
         /// <summary>
-        /// Calculates Asset turnover Ratio from Sales Revenue and Total Assets
+        /// Calculates Asset Turnover Ratio from Sales Revenue and Total Assets
         /// </summary>
         /// <param name="salesRevenue">Sales Revenue</param>
         /// <param name="totalAssets">Total Assets</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Asset Turnover Ratio</returns>
         public static decimal CalcAssetTurnoverRatio(decimal salesRevenue, decimal totalAssets)
         {
             return salesRevenue / totalAssets;
@@ -34,7 +34,7 @@ namespace srbrettle.FinancialFormulas
         /// Calculates Average Collection Period from Receivables Turnover
         /// </summary>
         /// <param name="receivablesTurnover">Receivables Turnover</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Average Collection Period</returns>
         public static decimal CalcAverageCollectionPeriod(decimal receivablesTurnover)
         {
             return 365 / receivablesTurnover;
@@ -45,7 +45,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="pricePerProduct">Price per Product</param>
         /// <param name="variableCostPerProduct">Variable Cost Per Product</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Contribution Margin</returns>
         public static decimal CalcContributionMargin(decimal pricePerProduct, decimal variableCostPerProduct)
         {
             return pricePerProduct - variableCostPerProduct;
@@ -56,7 +56,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="currentAssets">Current Assets</param>
         /// <param name="currentLiabilities">Current Liabilities</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Current Ratio</returns>
         public static decimal CalcCurrentRatio(decimal currentAssets, decimal currentLiabilities)
         {
             return currentAssets / currentLiabilities;
@@ -66,7 +66,7 @@ namespace srbrettle.FinancialFormulas
         /// Calculates Days In Inventory from Inventory Turnover
         /// </summary>
         /// <param name="inventoryTurnover">Inventory Turnover</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Days In Inventory</returns>
         public static decimal CalcDaysInInventory(decimal inventoryTurnover)
         {
             return 365 / inventoryTurnover;
@@ -77,7 +77,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="netOperatingIncome">Net Operating Income</param>
         /// <param name="debtService">Debt Service</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Debt Coverage Ratio</returns>
         public static decimal CalcDebtCoverageRatio(decimal netOperatingIncome, decimal debtService)
         {
             return netOperatingIncome / debtService;
@@ -88,7 +88,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="totalLiabilities">Total Liabilities</param>
         /// <param name="totalAssets">Total Assets</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Debt Ratio</returns>
         public static decimal CalcDebtRatio(decimal totalLiabilities, decimal totalAssets)
         {
             return totalLiabilities / totalAssets;
@@ -99,7 +99,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="totalLiabilities">Total Liabilities</param>
         /// <param name="totalEquity">Total Equity</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Debt to Equity Ratio</returns>
         public static decimal CalcDebtToEquityRatio(decimal totalLiabilities, decimal totalEquity)
         {
             return totalLiabilities / totalEquity;
@@ -111,19 +111,19 @@ namespace srbrettle.FinancialFormulas
         /// <param name="initialInvestment">Initial Investment</param>
         /// <param name="rate">Rate</param>
         /// <param name="periodicCashFlow">Periodic Cash Flow</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Discounted Payback Period</returns>
         public static decimal CalcDiscountedPaybackPeriod(decimal initialInvestment, decimal rate, decimal periodicCashFlow)
         {
-            return ((decimal)Math.Log(1/(1-(((double)initialInvestment*(double)rate)/(double)periodicCashFlow)))) / ((decimal)Math.Log(1+(double)rate));
+            return ((decimal)Math.Log(1 / (1 - (((double)initialInvestment * (double)rate) / (double)periodicCashFlow)))) / ((decimal)Math.Log(1 + (double)rate));
         }
 
         /// <summary>
-        /// Calculates for Equivalent Annual Annuity from Equivalent Annuity Cashflow, Net Present Value, Rate per Period and Number of Periods
+        /// Calculates for Equivalent Annual Annuity from Equivalent Annuity Cash Flow, Net Present Value, Rate per Period and Number of Periods
         /// </summary>
         /// <param name="netPresentValue">Net Present Value</param>
         /// <param name="ratePerPeriod">Rate per Period</param>
         /// <param name="numberOfPeriods">Number of Periods</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Equivalent Annual Annuity</returns>
         public static decimal CalcEquivalentAnnualAnnuity(decimal netPresentValue, decimal ratePerPeriod, decimal numberOfPeriods)
         {
             return (ratePerPeriod * netPresentValue) / (1 - (decimal)Math.Pow(1 + (double)ratePerPeriod, (double)-numberOfPeriods));
@@ -137,7 +137,7 @@ namespace srbrettle.FinancialFormulas
         /// <param name="capitalExpenditure">Capital Expenditures</param>
         /// <param name="changeInWorkingCapital">Change in Working Capital</param>
         /// <param name="netBorrowing">Net Borrowing</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Free Cash Flow to Equity</returns>
         public static decimal CalcFreeCashFlowToEquity(decimal netIncome, decimal depreciationAndAmortization, decimal capitalExpenditure, decimal changeInWorkingCapital, decimal netBorrowing)
         {
             return netIncome + depreciationAndAmortization - changeInWorkingCapital - capitalExpenditure + netBorrowing;
@@ -151,7 +151,7 @@ namespace srbrettle.FinancialFormulas
         /// <param name="depreciationAndAmortization">Depreciation and Amortization</param>
         /// <param name="capitalExpenditure">Capital Expenditures</param>
         /// <param name="changeInWorkingCapital">Change in Working Capital</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Free Cash Flow to Firm</returns>
         public static decimal CalcFreeCashFlowToFirm(decimal ebit, decimal taxRate, decimal depreciationAndAmortization, decimal capitalExpenditure, decimal changeInWorkingCapital)
         {
             return ebit * (1 - taxRate) + depreciationAndAmortization - capitalExpenditure - changeInWorkingCapital;
@@ -161,11 +161,11 @@ namespace srbrettle.FinancialFormulas
         /// Calculates Interest Coverage Ratio from EBIT and Interest Expense
         /// </summary>
         /// <param name="ebit">EBIT</param>
-        /// <param name="InterestExpense">Interest Expense</param>
-        /// <returns></returns>
-        public static decimal CalcInterestCoverageRatio(decimal ebit, decimal InterestExpense)
+        /// <param name="interestExpense">Interest Expense</param>
+        /// <returns>Decimal value for Interest Coverage Ratio</returns>
+        public static decimal CalcInterestCoverageRatio(decimal ebit, decimal interestExpense)
         {
-            return ebit / InterestExpense;
+            return ebit / interestExpense;
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="sales">Sales</param>
         /// <param name="inventory">Inventory</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Inventory Turnover Ratio</returns>
         public static decimal CalcInventoryTurnoverRatio(decimal sales, decimal inventory)
         {
             return sales / inventory;
@@ -185,7 +185,7 @@ namespace srbrettle.FinancialFormulas
         /// <param name="initialInvestment">Initial Investment</param>
         /// <param name="cashFlows">Cash Flows</param>
         /// <param name="discountRate">Discount Rate</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Net Present Value</returns>
         public static decimal CalcNetPresentValue(decimal initialInvestment, ICollection cashFlows, decimal discountRate)
         {
             decimal sumTotal = 0;
@@ -195,6 +195,7 @@ namespace srbrettle.FinancialFormulas
                 sumTotal += cashFlowAtPeriod / (decimal)Math.Pow((double)(1 + discountRate), count);
                 count++;
             }            
+
             return -initialInvestment + sumTotal;
         }
 
@@ -203,7 +204,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="netIncome">Net Income</param>
         /// <param name="salesRevenue">Sales Revenue</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Net Profit Margin</returns>
         public static decimal CalcNetProfitMargin(decimal netIncome, decimal salesRevenue)
         {
             return netIncome / salesRevenue;
@@ -214,7 +215,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="currentAssets">Current Assets</param>
         /// <param name="currentLiabilities">Current Liabilities</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Net Working Capital</returns>
         public static decimal CalcNetWorkingCapital(decimal currentAssets, decimal currentLiabilities)
         {
             return currentAssets - currentLiabilities;
@@ -225,7 +226,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="initialInvestment">Initial Investment</param>
         /// <param name="periodicCashFlow">Periodic Cash Flow</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Payback Period</returns>
         public static decimal CalcPaybackPeriod(decimal initialInvestment, decimal periodicCashFlow)
         {
             return initialInvestment / periodicCashFlow;
@@ -236,7 +237,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="quickAssets">Quick Assets</param>
         /// <param name="currentLiabilities">Current Liabilities</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Quick Ratio</returns>
         public static decimal CalcQuickRatio(decimal quickAssets, decimal currentLiabilities)
         {
             return quickAssets / currentLiabilities;
@@ -247,7 +248,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="salesRevenue">Sales Revenue</param>
         /// <param name="averageAccountsReceivable">Average Accounts Receivable</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Receivables Turnover Ratio</returns>
         public static decimal CalcReceivablesTurnoverRatio(decimal salesRevenue, decimal averageAccountsReceivable)
         {
             return salesRevenue / averageAccountsReceivable;
@@ -258,7 +259,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="netIncome">Net Income</param>
         /// <param name="dividends">Dividends</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Retention Ratio</returns>
         public static decimal CalcRetentionRatio(decimal netIncome, decimal dividends)
         {
             return (netIncome - dividends) / netIncome;
@@ -269,7 +270,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="netIncome">Net Income</param>
         /// <param name="averageTotalAssets">Average Total Assets</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Return on Assets</returns>
         public static decimal CalcReturnOnAssets(decimal netIncome, decimal averageTotalAssets)
         {
             return netIncome / averageTotalAssets;
@@ -280,7 +281,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="netIncome">Net Income</param>
         /// <param name="averageStockholdersEquity">Average Stockholders Equity</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Return on Equity</returns>
         public static decimal CalcReturnOnEquity(decimal netIncome, decimal averageStockholdersEquity)
         {
             return netIncome / averageStockholdersEquity;
@@ -291,7 +292,7 @@ namespace srbrettle.FinancialFormulas
         /// </summary>
         /// <param name="earnings">Earnings</param>
         /// <param name="initialInvestment">Initial Investment</param>
-        /// <returns></returns>
+        /// <returns>Decimal value for Return on Investment</returns>
         public static decimal CalcReturnOnInvestment(decimal earnings, decimal initialInvestment)
         {
             return (earnings - initialInvestment) / initialInvestment;
