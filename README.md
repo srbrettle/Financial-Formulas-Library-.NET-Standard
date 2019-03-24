@@ -6,17 +6,13 @@
 A collection of methods for solving Finance/Accounting equations, implemented in C#. 
 Java, Python and C++ implementations are available [here](https://github.com/srbrettle/Financial-Formulas).
 
-## See in Action
-
-[Finance Calculator - Android Application](https://play.google.com/store/apps/details?id=barwick.financecalculator)
-
 ## Getting Started - C#
 
-### Using NuGet [![NuGet](https://img.shields.io/badge/NuGet-1.2.3-blue.svg)](https://www.nuget.org/packages/FinancialFormulas/1.2.3)
+### Using NuGet [![NuGet](https://img.shields.io/badge/NuGet-1.3.1-blue.svg)](https://www.nuget.org/packages/FinancialFormulas/1.3.1)
 
 1. Within your project, install FinancialFormulas NuGet package (via "Manage Packages for Solution" or running the following in "Packet Manager Console".
 ```PowerShell
-Install-Package FinancialFormulas -Version 1.2.3
+Install-Package FinancialFormulas -Version 1.3.1
 ```
 2. Reference the Namespace:
 ```c#
@@ -104,6 +100,9 @@ This project is licensed under the MIT License - see the [LICENSE](/LICENSE) fil
 * Loan To Deposit Ratio
 * Loan To Value Ratio
 * Simple Interest
+* Simple Interest Rate
+* Simple Interest Principal
+* Simple Interest Time
 ### FinancialMarketsFormulas.cs
 * Rate Of Inflation
 * Real Rate Of Return
