@@ -4,10 +4,3 @@ before_build:
 - cmd: dotnet restore
 build:
   verbosity: quiet 
-test_script:  
-   - OpenCover.Console.exe -register:user -target:"dotnet.exe" -targetargs:"test Test" -output:".\coverage.xml" -filter:"+[FinancialFormulas]* -[UnitTest*]*" -oldStyle
-after_test:
-  - ps: |
-      $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
-      Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
-      bash codecov.sh -f "coverage.xml"
