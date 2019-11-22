@@ -1,7 +1,7 @@
 # Financial-Formulas-Library-.NET-Standard 
 
-[![Build status](https://ci.appveyor.com/api/projects/status/iy080gvd0x4gmt3c?svg=true)](https://ci.appveyor.com/project/srbrettle/financial-formulas-api-net-core) [![Build Status](https://travis-ci.org/srbrettle/Financial-Formulas-Library-.NET-Standard.svg?branch=master)](https://travis-ci.org/srbrettle/Financial-Formulas-Library-.NET-Standard) [![codecov](https://codecov.io/gh/srbrettle/Financial-Formulas-Library-.NET-Standard/branch/master/graph/badge.svg)](https://codecov.io/gh/srbrettle/Financial-Formulas-Library-.NET-Standard)
- [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/srbrettle/Financial-Formulas-Library-.NET-Core/issues)
+[![Build status](https://ci.appveyor.com/api/projects/status/iy080gvd0x4gmt3c?svg=true)](https://ci.appveyor.com/project/srbrettle/financial-formulas-api-net-standard) [![Build Status](https://travis-ci.org/srbrettle/Financial-Formulas-Library-.NET-Standard.svg?branch=master)](https://travis-ci.org/srbrettle/Financial-Formulas-Library-.NET-Standard) [![codecov](https://codecov.io/gh/srbrettle/Financial-Formulas-Library-.NET-Standard/branch/master/graph/badge.svg)](https://codecov.io/gh/srbrettle/Financial-Formulas-Library-.NET-Standard)
+ [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/srbrettle/Financial-Formulas-Library-.NET-Standard/issues)
 
 A collection of methods for solving Finance/Accounting equations, implemented in C#. 
 Java, Python and C++ implementations are available [here](https://github.com/srbrettle/Financial-Formulas).
